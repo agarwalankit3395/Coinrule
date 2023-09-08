@@ -1,0 +1,231 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+body {
+  font-family: 'Poppins', sans-serif;
+  font-weight: normal;
+  font-size: 16px;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+span,
+div,
+button {
+  font-family: 'Poppins', sans-serif !important;
+  font-weight: normal;
+}
+
+/* sub navbar menu  css*/
+.dropbtn {
+  position: relative;
+  transition: 0.5s;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+  transition: 0.5s;
+}
+
+.dropdown-content {
+  opacity: 0;
+  display: none;
+  position: absolute;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  top: 1.4em;
+  transition: 0.5s;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 3px 16px;
+  text-decoration: none;
+  display: block;
+  transition: 0.5s;
+}
+
+
+.dropdown:hover .dropdown-content {
+  display: block;
+  opacity: 1;
+}
+
+
+/* sub navbar menu  css end*/
+
+/* hero section background image css add */
+
+.herosbg {
+  position: relative;
+}
+
+.herosbg::before {
+  position: absolute;
+  content: '';
+  background-image: url('../src/assets/bg-gr2.png');
+  height: 100%;
+  width: 100%;
+  z-index: 0;
+  background-repeat: no-repeat;
+  background-size: cover; 
+
+}
+ 
+ 
+.animation-logo {
+  position: relative;
+}
+
+.animation-logo:nth-child(1) {
+  top: -6rem;
+  animation: wwrrightstar 7s infinite linear;
+}
+
+.animation-logo:nth-child(2) {
+  top: 6rem;
+  animation: wwrrightstar 15s infinite linear;
+}
+
+.animation-logo:nth-child(3) {
+  top: -3rem;
+  animation: wwrrightstar 5s infinite linear;
+}
+
+.animation-logo:nth-child(4) {
+  top: -7rem;
+  animation: wwrrightstar 8s infinite linear;
+}
+
+.animation-logo:nth-child(5) {
+  top: 7rem;
+  left: -3rem;
+  animation: wwrrightstar 10s infinite linear;
+}
+
+.animation-logo:nth-child(6) {
+  animation: wwrrightstar 3.6s infinite linear;
+}
+
+.animation-logo:nth-child(7) {
+  top: -6rem;
+  animation: wwrrightstar 4s infinite linear;
+}
+
+.animation-logo:nth-child(8) {
+  top: 6rem;
+  animation: wwrrightstar 7s infinite linear;
+}
+
+.animation-logo:nth-child(9) {
+  animation: wwrrightstar 12s infinite linear;
+}
+
+
+@keyframes wwrrightstar {
+  0% { 
+    transform: translateY(-20%);
+  }
+
+  50% { 
+    transform: translateY(20%);
+  }
+
+  100% { 
+    transform: translateY(-20%);
+  }
+}
+
+
+.boxfirst,
+.boxbalance {
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.boxfirst .secarea::before {
+  position: absolute;
+  content: '';
+  background-color: #151516;
+  width: 100px;
+  height: 100px;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  border-radius: 50%;
+  transition: 0.5s;
+  transform: translate3d(-50px, 20rem, 10px);
+}
+
+.boxfirst:hover .secarea::before {
+  position: absolute;
+  content: '';
+  background-color: #ff9800;
+  background: linear-gradient(49deg, transparent, #ff9800);
+  width: 310px;
+  height: 310px;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  transform: translate3d(-27px, -8rem, 10px);
+}
+
+
+.boxbalance .balancearea::before {
+  position: absolute;
+  content: '';
+  background-color: #383737;
+  width: 100px;
+  height: 100px;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  border-radius: 50%;
+  transition: 0.5s;
+  transform: translate3d(-50px, -3rem, 10px);
+}
+
+.boxbalance:hover .balancearea::before {
+  position: absolute;
+  content: '';
+  background-color: #ff9800;
+  background: linear-gradient(49deg, transparent, #ff9800);
+  width: 310px;
+  height: 310px;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  transform: translate3d(-16px, -9rem, 10px);
+}
+
+.eccosarea::before {
+  position: absolute;
+  content: '';
+  background-image: url('../src/assets/image_processing20210903-11142-rgcjlz.gif');
+  height: 100%;
+  width: 100%;
+  z-index: 0;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  opacity: 0.1;
+
+}
+ 

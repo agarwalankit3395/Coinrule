@@ -1,0 +1,21 @@
+/* .Scrolling {
+  height: 550px;
+  overflow-y: scroll;
+} */
+.Scrolling::-webkit-scrollbar-track
+{
+	-webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0);
+	background-color: #f5f5f500;
+}
+
+.Scrolling::-webkit-scrollbar
+{
+	width: 2px;
+	background-color: #f5f5f500;
+}
+
+.Scrolling::-webkit-scrollbar-thumb
+{
+	background-color: #00000000;
+	border: 2px solid #55555500;
+}

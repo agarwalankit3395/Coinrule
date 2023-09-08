@@ -1,0 +1,96 @@
+import React, { useState, useEffect } from 'react'
+import { Toolbar, Box, useMediaQuery, useTheme, Container } from '@mui/material'
+import DarkModeOutlinedIcon from '@mui/icons-material/DarkModeOutlined';
+import WbSunnyRoundedIcon from '@mui/icons-material/WbSunnyRounded';
+
+import logo from './stakelabs-logo.png'
+import DrawerComponent from './DrawerComponent';
+import { Link } from 'react-router-dom';
+import styled from 'styled-components';
+import NavBar from './NavBar';
+import ConnectButton from './ConnectButton';
+
+import withRouter from '../../../withRouter';
+
+const Navbarmain = styled.div`
+    // background: ${({ theme }) => theme.soft}; 
+    position: absolute;
+    top:0;
+    display:flex;
+    align-items:center;
+    z-index:10;
+    width:100%;
+    height:100px;
+`
+
+const Logo = styled.div`  
+    gap:5px; 
+`
+const Img = styled.img` 
+    width:120px
+`
+const DarkLight = styled.div`
+    margin-left: 1rem;
+    cursor: pointer;
+`
+const Connectbtn = styled.div` 
+     
+        cursor: pointer; 
+        background: ${({ theme }) => theme.bgBtns};
+        padding: 10px 20px;
+        border-radius: 5px;
+        font-size: 16px;
+        font-weight: 700;
+        color: #fff; 
+    $:hover { 
+        background: ${({ theme }) => theme.bg};
+    }
+`
+
+
+
+const HeaderBar = ({router }) => {
+ 
+    const theme = useTheme(); 
+
+    const isMatch = useMediaQuery(theme.breakpoints.down('md'));
+
+  
+    return (
+        <React.Fragment>
+            <Navbarmain>
+                <Container maxWidth='xl'>
+                    <Toolbar>
+                        <Box paddingY='8px' component={Link} to='/'>
+                            <Logo>
+                                <Img src={logo} alt='' />
+                            </Logo>
+                        </Box>
+                        {
+                            isMatch ? (
+                                <>
+                                    <DrawerComponent />
+                                    <Box>
+                                        <ConnectButton />
+                                    </Box>
+                                </>
+                            ) : (
+                                <>
+                                    <Box marginLeft='auto'>
+                                        <NavBar />
+                                    </Box>
+                                    <Box sx={{ marginLeft: '3rem' }} >
+                                        <ConnectButton />
+                                    </Box>
+                                      
+                                </>
+                            )}
+                    </Toolbar>
+                </Container>
+            </Navbarmain>
+        </React.Fragment>
+    )
+};
+
+export default HeaderBar;
+
