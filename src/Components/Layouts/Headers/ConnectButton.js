@@ -22,9 +22,9 @@ const Connectbtn = styled.div`
     }
 `
 const ConnectButton = () => {
-    const [userWalletAddress, setUserWalletAddress] = useState("");
-    const { setWalletAddress } = useWeb3();
+    const {walletAddress, setWalletAddress } = useWeb3();
     const handleConnectMetaMask = async () => {
+        console.log(walletAddress)
         const BNBchainId = '0x61';
         if (window.ethereum) {
             try {
@@ -45,7 +45,6 @@ const ConnectButton = () => {
                         });
                     const account = accounts[0];
                     setWalletAddress(account)
-                    setUserWalletAddress(account);
                     await get_info(window.ethereum, account);
                     console.log(account)
                 } else {
@@ -89,7 +88,7 @@ const ConnectButton = () => {
     return (
         <div>
             <Connectbtn variant='contained' className='explorebtns' onClick={handleConnectMetaMask}>
-                {userWalletAddress ? userWalletAddress : "Connect Wallet"}
+                {walletAddress !== null ? walletAddress : "Connect Wallet"}
             </Connectbtn>
         </div>
     )

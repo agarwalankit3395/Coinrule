@@ -17597,6 +17597,7 @@ const InvestTable = () => {
             if (window.ethereum) {
                 if (walletAddress !== null) {
                 const info = await get_info(window.ethereum, walletAddress);
+                console.log("chk1   ")
                 setInfo(info);
                     const checkexpiryData = await info.arbi_bot.checkExpiryDate(walletAddress);
                     const currentdate = Math.floor(new Date().getTime() / 1000.0);
@@ -17695,7 +17696,7 @@ const InvestTable = () => {
 
     return (
         <Paper style={{ width: '100%', height: '100%', boxShadow: 'none' }}>
-            {walletAddress && expiryData.checkexpiryData >= expiryData.currentdate ?
+            {walletAddress !== null && expiryData.checkexpiryData >= expiryData.currentdate ?
                 <DataGrid sx={{ boxShadow: 'none', background: '#fafafa' }}
                     getRowId={(row) => (row.s1)}
                     columns={columns}
