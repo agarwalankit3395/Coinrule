@@ -9,6 +9,7 @@ import Stack from "@mui/material/Stack";
 import Snackbar from "@mui/material/Snackbar";
 
 import { useState } from "react";
+import LogoutIcon from '@mui/icons-material/Logout';
 
 const Connectbtn = styled.div`
   cursor: pointer;
@@ -163,7 +164,7 @@ const ConnectButton = () => {
         //   <div>
         //   </div>
         // </div>
-        <Button variant="contained" onClick={handleDisconnectMetaMask}>
+        <Button variant="contained" onClick={handleDisconnectMetaMask} endIcon={<LogoutIcon sx={{ color : '#fff'}} />}>
           {walletAddress}
         </Button>
       )}
