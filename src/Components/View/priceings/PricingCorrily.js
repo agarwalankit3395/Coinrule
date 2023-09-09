@@ -35,7 +35,7 @@ const PricingCorrily = () => {
 
     useEffect(() => {
         async function main() {
-            if (window.ethereum) {
+            if (window.ethereum && walletAddress !== null) {
                 const info = await get_info(window.ethereum, walletAddress);
                 setInfo(info);
             }
@@ -45,7 +45,7 @@ const PricingCorrily = () => {
 
     useEffect(() => {
         async function checkAllowance() {
-            if (window.ethereum) {
+            if (window.ethereum && walletAddress !== null) {
                 const checkAllowance = await info?.usdt_token.allowance(walletAddress.toString(), Smart_Contract_Address)
                 const check = checkAllowance.toString();
                 console.log(Number(check))
@@ -133,8 +133,8 @@ const PricingCorrily = () => {
                             </Box>
                             <Box paddingY={'1.5rem'}>
                                 <List>
-                                    {oneYearPackage.map((yeardata) => (
-                                        <ListItem>
+                                    {oneYearPackage.map((yeardata, index) => (
+                                        <ListItem key={index}>
                                             <ListItemIcon>
                                                 <DoneIcon sx={{ color: "#fff" }} />
                                             </ListItemIcon>

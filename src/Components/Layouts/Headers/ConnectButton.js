@@ -25,12 +25,13 @@ const ConnectButton = () => {
     const [userWalletAddress, setUserWalletAddress] = useState("");
     const { setWalletAddress } = useWeb3();
     const handleConnectMetaMask = async () => {
-        const BNBchainId = 0x61;
+        const BNBchainId = '0x61';
         if (window.ethereum) {
             try {
                 console.log("Hello Metamask!");
                 const currentChainId = await window.ethereum.request({ method: 'eth_chainId' });
                 console.log(currentChainId);
+                console.log(BNBchainId)
                 if (BNBchainId === currentChainId) {
                     const accounts = await window.ethereum.request({ method: 'eth_requestAccounts' })
                         .catch((err) => {

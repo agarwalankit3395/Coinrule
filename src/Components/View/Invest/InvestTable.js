@@ -17595,26 +17595,27 @@ const InvestTable = () => {
     useEffect(() => {
         async function main() {
             if (window.ethereum) {
+                if (walletAddress !== null) {
                 const info = await get_info(window.ethereum, walletAddress);
                 setInfo(info);
-            }
-        }
-        main()
-    }, [info, walletAddress])
-
-    useEffect(() => {
-        async function checkSubscription() {
-            if (window.ethereum) {
-                if (walletAddress !== null) {
                     const checkexpiryData = await info.arbi_bot.checkExpiryDate(walletAddress);
                     const currentdate = Math.floor(new Date().getTime() / 1000.0);
                     setExpiryDate({ checkexpiryData: Number(checkexpiryData), currentdate: currentdate });
                 }
-
             }
         }
-        checkSubscription()
-    }, [walletAddress, info])
+        main()
+    }, [walletAddress])
+
+    // useEffect(() => {
+    //     async function checkSubscription() {
+    //         if (window.ethereum) {
+              
+
+    //         }
+    //     }
+    //     checkSubscription()
+    // }, [walletAddress, info])
 
     const handleAPI = () => {
         let config = {
