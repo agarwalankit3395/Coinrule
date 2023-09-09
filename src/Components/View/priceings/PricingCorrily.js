@@ -6,7 +6,7 @@ import { get_info } from '../../utils/SmartContract';
 import { useEffect } from 'react';
 import { useState } from 'react';
 import { Smart_Contract_Address } from '../../utils/SmartContract';
-
+import useWeb3 from '../../utils/useWeb3';
 const oneMonthPackage = ["Efficient Crypto Arbitrage Opportunities",
     "Real-time Price Monitoring",
     "User-Friendly Interface",
@@ -30,35 +30,33 @@ const oneYearPackage = ["Efficient Crypto Arbitrage Opportunities",
 
 const PricingCorrily = () => {
     const [info, setInfo] = useState(0);
-    const [userWalletAddress, setUserWalletAddress] = useState("");
     const [allowancePrice, setAllowancePrice] = useState(0);
+    const { walletAddress } = useWeb3();
 
     useEffect(() => {
         async function main() {
             if (window.ethereum) {
-                const accounts = await window.ethereum.request({ method: "eth_requestAccounts" });
-                setUserWalletAddress(accounts[0])
-                const info = await get_info(window.ethereum, accounts);
+                const info = await get_info(window.ethereum, walletAddress);
                 setInfo(info);
             }
         }
         main()
-    }, [])
+    }, [walletAddress])
 
     useEffect(() => {
         async function checkAllowance() {
             if (window.ethereum) {
-                const checkAllowance = await info?.usdt_token.allowance(userWalletAddress.toString(), Smart_Contract_Address)
+                const checkAllowance = await info?.usdt_token.allowance(walletAddress.toString(), Smart_Contract_Address)
                 const check = checkAllowance.toString();
                 console.log(Number(check))
                 setAllowancePrice(Number(check))
             }
         }
         checkAllowance()
-    }, [info, allowancePrice])
+    }, [info, allowancePrice, walletAddress])
 
     const handleOneMonthPackage = async () => {
-        const checkAllowance = await info?.usdt_token.allowance(userWalletAddress.toString(), Smart_Contract_Address)
+        const checkAllowance = await info?.usdt_token.allowance(walletAddress.toString(), Smart_Contract_Address)
         console.log(checkAllowance.toString());
 
         const monthlyPrice = (await info?.arbi_bot.MonthSubscribyionFee());
@@ -76,7 +74,7 @@ const PricingCorrily = () => {
     }
 
     const handleOneYearPackage = async () => {
-        const checkAllowance = await info.usdt_token.allowance(userWalletAddress.toString(), Smart_Contract_Address)
+        const checkAllowance = await info.usdt_token.allowance(walletAddress.toString(), Smart_Contract_Address)
         console.log(checkAllowance.toString());
 
         const yearPrice = await info.arbi_bot.YearSubscribyionFee();

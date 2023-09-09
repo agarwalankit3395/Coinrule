@@ -4,7 +4,6 @@ import axios from 'axios';
 import { DataGrid } from '@mui/x-data-grid';
 import { get_info } from '../../utils/SmartContract';
 import useWeb3 from '../../utils/useWeb3';
-import { Info } from '@mui/icons-material';
 import { Box, Typography } from '@mui/material';
 
 const row = [
@@ -17588,21 +17587,20 @@ const row = [
 
 const InvestTable = () => {
     const { walletAddress } = useWeb3();
+    // eslint-disable-next-line
     const [tabledata, setTabledata] = useState([]);
     const [info, setInfo] = useState(0);
-    const [userWalletAddress, setUserWalletAddress] = useState("");
     const [expiryData, setExpiryDate] = useState(0);
+
     useEffect(() => {
         async function main() {
             if (window.ethereum) {
-                const accounts = await window.ethereum.request({ method: "eth_requestAccounts" });
-                setUserWalletAddress(accounts[0])
-                const info = await get_info(window.ethereum, accounts);
+                const info = await get_info(window.ethereum, walletAddress);
                 setInfo(info);
             }
         }
         main()
-    }, [info])
+    }, [info, walletAddress])
 
     useEffect(() => {
         async function checkSubscription() {
@@ -17610,9 +17608,6 @@ const InvestTable = () => {
                 if (walletAddress !== null) {
                     const checkexpiryData = await info.arbi_bot.checkExpiryDate(walletAddress);
                     const currentdate = Math.floor(new Date().getTime() / 1000.0);
-
-                    //   console.log(Number(checkexpiryData));
-                    //   console.log(currentdate);
                     setExpiryDate({ checkexpiryData: Number(checkexpiryData), currentdate: currentdate });
                 }
 
@@ -17637,8 +17632,8 @@ const InvestTable = () => {
                 console.log(error);
             });
     }
-    handleAPI()
-    setInterval(function () { handleAPI() }, 10000);
+    // handleAPI()
+    // setInterval(function () { handleAPI() }, 10000);
 
 
     const columns = [
@@ -17692,7 +17687,7 @@ const InvestTable = () => {
         {
             field: 'percent',
             headerName: 'Percent',
-            width: 200,
+            width: 200
         },
     ];
 
@@ -17701,7 +17696,7 @@ const InvestTable = () => {
         <Paper style={{ width: '100%', height: '100%', boxShadow: 'none' }}>
             {walletAddress && expiryData.checkexpiryData >= expiryData.currentdate ?
                 <DataGrid sx={{ boxShadow: 'none', background: '#fafafa' }}
-                    getRowId={(row) => (row.s1, row.p2)}
+                    getRowId={(row) => (row.s1)}
                     columns={columns}
                     rows={row}
                     initialState={{
@@ -17711,10 +17706,10 @@ const InvestTable = () => {
                     }}
                     pageSizeOptions={[15, 20, 30, 50, 100]}
                 />
-                :  <Box paddingY='2rem' textAlign={'center'}>
-                        <Typography variant='h4' fontWeight={'600'} padding={'2rem'} bgcolor={'#e3f2fd'} borderRadius={'12px'}> Not Connected</Typography>
-                    </Box> 
-}
+                : <Box paddingY='2rem' textAlign={'center'}>
+                    <Typography variant='h4' fontWeight={'600'} padding={'2rem'} bgcolor={'#e3f2fd'} borderRadius={'12px'}> Not Connected</Typography>
+                </Box>
+            }
 
         </Paper >
     )
