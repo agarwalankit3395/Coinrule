@@ -4,6 +4,10 @@ import styled from "styled-components";
 import useWeb3 from "../../utils/useWeb3";
 import { get_info } from "../../utils/SmartContract";
 import { Button } from "@mui/material";
+
+import Stack from "@mui/material/Stack";
+import Snackbar from "@mui/material/Snackbar";
+
 import { useState } from "react";
 
 const Connectbtn = styled.div`
@@ -24,6 +28,9 @@ const Connectbtn = styled.div`
 
 const ConnectButton = () => {
   const { walletAddress, setWalletAddress } = useWeb3();
+  const [open, setOpen] = React.useState(false);
+  const [connected, setConnected] = useState(false);
+  const [metamaskconnected, setMetaMaskConnected] = useState(false);
 
   useEffect(() => {
     async function main() {
@@ -64,6 +71,7 @@ const ConnectButton = () => {
           setWalletAddress(account);
           await get_info(window.ethereum, account);
           console.log(account);
+          handleMetaMaskConnection();
         } else {
           try {
             await window.ethereum.request({
@@ -98,6 +106,7 @@ const ConnectButton = () => {
           }
         }
       } else if (!window.ethereum) {
+        handleClick();
         console.log("Install MetaMask");
       } else {
         console.log("Already Connected");
@@ -107,8 +116,39 @@ const ConnectButton = () => {
     }
   };
 
+  const handleMetaMaskConnection = async () => {
+    setMetaMaskConnected(true);
+  };
+
+  const handelMetaMaskConnectedClose = (event, reason) => {
+    if (reason === "clickaway") {
+      return;
+    }
+
+    setMetaMaskConnected(false);
+  };
+  const handlemetamaskClose = (event, reason) => {
+    if (reason === "clickaway") {
+      return;
+    }
+
+    setConnected(false);
+  };
+  const handleClick = () => {
+    setOpen(true);
+  };
+
+  const handleClose = (event, reason) => {
+    if (reason === "clickaway") {
+      return;
+    }
+
+    setOpen(false);
+  };
+
   const handleDisconnectMetaMask = async () => {
     setWalletAddress(null);
+    setConnected(true);
   };
 
   return (
@@ -123,10 +163,34 @@ const ConnectButton = () => {
         //   <div>
         //   </div>
         // </div>
-            <Button variant="contained" onClick={handleDisconnectMetaMask}>
-            {walletAddress}
-            </Button>
+        <Button variant="contained" onClick={handleDisconnectMetaMask}>
+          {walletAddress}
+        </Button>
       )}
+      <Stack spacing={2} sx={{ width: "100%" }}>
+        <Snackbar
+          open={open}
+          autoHideDuration={2000}
+          onClose={handleClose}
+          message="Please Install MetaMask!"
+        ></Snackbar>
+      </Stack>
+      <Stack spacing={2} sx={{ width: "100%" }}>
+        <Snackbar
+          open={connected}
+          autoHideDuration={2000}
+          onClose={handlemetamaskClose}
+          message="Disconnected to MetaMask"
+        ></Snackbar>
+      </Stack>
+      <Stack spacing={2} sx={{ width: "100%" }}>
+        <Snackbar
+          open={metamaskconnected}
+          autoHideDuration={2000}
+          onClose={handelMetaMaskConnectedClose}
+          message="Connected to MetaMask"
+        ></Snackbar>
+      </Stack>
     </div>
   );
 };

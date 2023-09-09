@@ -16,6 +16,10 @@ import { useEffect } from "react";
 import { useState } from "react";
 import { Smart_Contract_Address } from "../../utils/SmartContract";
 import useWeb3 from "../../utils/useWeb3";
+import Stack from "@mui/material/Stack";
+import Snackbar from "@mui/material/Snackbar";
+import { useNavigate } from "react-router-dom";
+
 const oneMonthPackage = [
   "Efficient Crypto Arbitrage Opportunities",
   "Real-time Price Monitoring",
@@ -45,6 +49,10 @@ const PricingCorrily = () => {
   const [info, setInfo] = useState(0);
   const [allowancePrice, setAllowancePrice] = useState(0);
   const { walletAddress, setWalletAddress } = useWeb3();
+  const [metamaskconnected, setMetaMaskConnected] = useState(false);
+  const [subscriptionAlert, setSubscriptionAlert] = useState(false);
+  const [allowanceAlert, setAllowanceAlert] = useState(false);
+  const navigate = useNavigate();
 
   useEffect(() => {
     async function main() {
@@ -79,6 +87,7 @@ const PricingCorrily = () => {
         });
         console.log(account[0]);
         setWalletAddress(account[0]);
+        handleMetaMaskConnection();
       }
     } catch (error) {
       console.log(error);
@@ -104,9 +113,14 @@ const PricingCorrily = () => {
           yearPrice.toString()
         );
         console.log(res);
+        await res.wait();
+        handleAllowanceAlert();
       }
       const result = await info?.arbi_bot.Subscription("1");
       console.log(result);
+      await result.wait();
+      handleSubscriptionOpenAlert();
+      navigate("/invest", { replace: true });
     } catch (error) {
       console.log(error);
     }
@@ -127,14 +141,53 @@ const PricingCorrily = () => {
         yearPrice.toString()
       );
       console.log(res);
+      await res.wait();
+
+      handleAllowanceAlert();
     }
     const result = await info.arbi_bot.Subscription("2");
-    console.log(result);
+    await result.wait();
+    handleSubscriptionOpenAlert();
+    navigate("/invest", { replace: true });
   };
 
   const handleUnsubscribe = async () => {
     const res = await info.arbi_bot.UnSubscription();
     console.log(res);
+  };
+
+  const handleMetaMaskConnection = async () => {
+    setMetaMaskConnected(true);
+  };
+
+  const handelMetaMaskConnectedClose = (event, reason) => {
+    if (reason === "clickaway") {
+      return;
+    }
+
+    setMetaMaskConnected(false);
+  };
+
+  const handleSubscriptionOpenAlert = async () => {
+    setSubscriptionAlert(true);
+  };
+
+  const handleSubscriptionCloseAlert = async (event, reason) => {
+    if (reason === "clickaway") {
+      return;
+    }
+    setSubscriptionAlert(false);
+  };
+
+  const handleAllowanceAlert = async () => {
+    setAllowanceAlert(true);
+  };
+
+  const handleAllowanceCloseAlert = async (event, reason) => {
+    if (reason === "clickaway") {
+      return;
+    }
+    setAllowanceAlert(false);
   };
 
   return (
@@ -277,7 +330,6 @@ const PricingCorrily = () => {
                   ) : (
                     <Button
                       onClick={handleOneYearPackage}
-                      endIcon={<AddOutlinedIcon sx={{ color: "#fff" }} />}
                       variant="contained"
                       sx={{
                         boxShadow: "none",
@@ -315,6 +367,30 @@ const PricingCorrily = () => {
           </Grid>
         </Grid>
       </Container>
+      <Stack spacing={2} sx={{ width: "100%" }}>
+        <Snackbar
+          open={metamaskconnected}
+          autoHideDuration={2000}
+          onClose={handelMetaMaskConnectedClose}
+          message="Connected to MetaMask"
+        ></Snackbar>
+      </Stack>
+      <Stack spacing={2} sx={{ width: "100%" }}>
+        <Snackbar
+          open={subscriptionAlert}
+          autoHideDuration={2000}
+          onClose={handleSubscriptionCloseAlert}
+          message="Subscribe to the One Month Plan!"
+        ></Snackbar>
+      </Stack>
+      <Stack spacing={2} sx={{ width: "100%" }}>
+        <Snackbar
+          open={allowanceAlert}
+          autoHideDuration={2000}
+          onClose={handleAllowanceCloseAlert}
+          message="Allowance has been provided!"
+        ></Snackbar>
+      </Stack>
     </Box>
   );
 };
