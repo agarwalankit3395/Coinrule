@@ -52,6 +52,9 @@ const PricingCorrily = () => {
   const [metamaskconnected, setMetaMaskConnected] = useState(false);
   const [subscriptionAlert, setSubscriptionAlert] = useState(false);
   const [allowanceAlert, setAllowanceAlert] = useState(false);
+  const [usdtBalanceAlert, setUSdtBalanceAlert] = useState(false);
+  const [open, setOpen] = React.useState(false);
+
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -81,16 +84,72 @@ const PricingCorrily = () => {
 
   const handleWalletConnect = async () => {
     try {
-      if (walletAddress == null) {
-        const account = await window.ethereum.request({
-          method: "eth_requestAccounts"
+      const BNBchainId = "0x61";
+      if (window.ethereum && walletAddress == null) {
+        console.log("Hello Metamask!");
+        const currentChainId = await window.ethereum.request({
+          method: "eth_chainId"
         });
-        console.log(account[0]);
-        setWalletAddress(account[0]);
-        handleMetaMaskConnection();
+        console.log(currentChainId);
+        console.log(BNBchainId);
+        if (BNBchainId === currentChainId) {
+          const accounts = await window.ethereum
+            .request({ method: "eth_requestAccounts" })
+            .catch((err) => {
+              if (err.code === 4001) {
+                // EIP-1193 userRejectedRequest error
+                // If this happens, the user rejected the connection request.
+                console.log("Please connect to MetaMask.");
+              } else {
+                console.error(err);
+              }
+            });
+          const account = accounts[0];
+          setWalletAddress(account);
+          await get_info(window.ethereum, account);
+          console.log(account);
+          handleMetaMaskConnection();
+        } else {
+          try {
+            await window.ethereum.request({
+              method: "wallet_switchEthereumChain",
+              params: [{ chainId: "0x61" }]
+            });
+          } catch (e) {
+            if (e.code === 4902) {
+              try {
+                await window.ethereum.request({
+                  method: "wallet_addEthereumChain",
+                  params: [
+                    {
+                      chainId: "0x61",
+                      chainName: "Smart Chain - Testnet",
+                      nativeCurrency: {
+                        name: "Binance",
+                        symbol: "BNB", // 2-6 characters long
+                        decimals: 18
+                      },
+                      blockExplorerUrls: ["https://testnet.bscscan.com"],
+                      rpcUrls: [
+                        "https://data-seed-prebsc-1-s1.binance.org:8545/"
+                      ]
+                    }
+                  ]
+                });
+              } catch (addError) {
+                console.error(addError);
+              }
+            }
+          }
+        }
+      } else if (!window.ethereum) {
+        handleClick();
+        console.log("Install MetaMask");
+      } else {
+        console.log("Already Connected");
       }
-    } catch (error) {
-      console.log(error);
+    } catch (addError) {
+      console.error(addError);
     }
   };
 
@@ -116,6 +175,14 @@ const PricingCorrily = () => {
         await res.wait();
         handleAllowanceAlert();
       }
+      const checkUserUSDTbalance = await info?.usdt_token.balanceOf(
+        walletAddress.toString()
+      );
+      console.log(checkUserUSDTbalance.toString());
+      if (checkUserUSDTbalance.toString() < monthlyPrice.toString()) {
+        handleUSDTBalance();
+        return;
+      }
       const result = await info?.arbi_bot.Subscription("1");
       console.log(result);
       await result.wait();
@@ -134,7 +201,7 @@ const PricingCorrily = () => {
     console.log(checkAllowance.toString());
 
     const yearPrice = await info.arbi_bot.YearSubscribyionFee();
-    console.log(yearPrice);
+    console.log(yearPrice.toString());
     if (checkAllowance.toString() < yearPrice.toString()) {
       const res = await info.usdt_token.increaseAllowance(
         Smart_Contract_Address,
@@ -144,6 +211,14 @@ const PricingCorrily = () => {
       await res.wait();
 
       handleAllowanceAlert();
+    }
+    const checkUserUSDTbalance = await info?.usdt_token.balanceOf(
+      walletAddress.toString()
+    );
+    console.log(checkUserUSDTbalance.toString());
+    if (checkUserUSDTbalance.toString() < yearPrice.toString()) {
+      handleUSDTBalance();
+      return;
     }
     const result = await info.arbi_bot.Subscription("2");
     await result.wait();
@@ -188,6 +263,29 @@ const PricingCorrily = () => {
       return;
     }
     setAllowanceAlert(false);
+  };
+
+  const handleUSDTBalance = async () => {
+    setUSdtBalanceAlert(true);
+  };
+
+  const handleUSDTCloseBalance = async (event, reason) => {
+    if (reason === "clickaway") {
+      return;
+    }
+    setUSdtBalanceAlert(false);
+  };
+
+  const handleClick = () => {
+    setOpen(true);
+  };
+
+  const handleClose = (event, reason) => {
+    if (reason === "clickaway") {
+      return;
+    }
+
+    setOpen(false);
   };
 
   return (
@@ -389,6 +487,22 @@ const PricingCorrily = () => {
           autoHideDuration={2000}
           onClose={handleAllowanceCloseAlert}
           message="Allowance has been provided!"
+        ></Snackbar>
+      </Stack>
+      <Stack spacing={2} sx={{ width: "100%" }}>
+        <Snackbar
+          open={open}
+          autoHideDuration={2000}
+          onClose={handleClose}
+          message="Please Install MetaMask!"
+        ></Snackbar>
+      </Stack>
+      <Stack spacing={2} sx={{ width: "100%" }}>
+        <Snackbar
+          open={usdtBalanceAlert}
+          autoHideDuration={2000}
+          onClose={handleUSDTCloseBalance}
+          message="USDT Balance is Low"
         ></Snackbar>
       </Stack>
     </Box>
