@@ -33,7 +33,7 @@ const App = (props) => {
               <Route path="/" element={<Index />}>
                 <Route index element={<Index />} />
               </Route>
-              <Route path='/about' element={<About />} />
+              <Route path='/home' element={<About />} />
               <Route path='/price' element={<Price />} />
               <Route path='/invest' element={<Invests />} />
               <Route path='/faq' element={<FAQ />} />

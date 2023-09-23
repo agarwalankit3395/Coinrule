@@ -187,7 +187,7 @@ const PricingCorrily = () => {
       console.log(result);
       await result.wait();
       handleSubscriptionOpenAlert();
-      navigate("/invest", { replace: true });
+      navigate("/CryptoArbitrage", { replace: true });
     } catch (error) {
       console.log(error);
     }

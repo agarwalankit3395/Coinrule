@@ -3,7 +3,7 @@ import { Toolbar, Box, useMediaQuery, useTheme, Container } from '@mui/material'
 import DarkModeOutlinedIcon from '@mui/icons-material/DarkModeOutlined';
 import WbSunnyRoundedIcon from '@mui/icons-material/WbSunnyRounded';
 
-import logo from './stakelabs-logo.png'
+import logo from './arbitrage.png'
 import DrawerComponent from './DrawerComponent';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
@@ -63,7 +63,7 @@ const HeaderBar = ({router }) => {
                     <Toolbar>
                         <Box paddingY='8px' component={Link} to='/'>
                             <Logo>
-                                <Img src={logo} alt='' />
+                                <Img src={logo} style={{borderRadius:'12px'}} alt='' />
                             </Logo>
                         </Box>
                         {

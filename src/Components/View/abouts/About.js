@@ -1,6 +1,7 @@
 import { Box, Button, Container, Grid, Typography } from '@mui/material';
 import React from 'react'
 import teamimg from '../../../assets/teamPhoto.jpg'
+import TermsServiceAbout from '../MainPage/TermsServiceAbout';
 
 
 
@@ -23,9 +24,9 @@ const About = () => {
                             </Grid>
                             <Grid item md={5} xs={12}>
                                 <Box>
-                                    <img src={teamimg} alt='img' width={'100%'} style={{borderRadius:'12px'}} />
+                                    <img src={teamimg} alt='img' width={'100%'} style={{ borderRadius: '12px' }} />
                                 </Box>
-                            </Grid>  
+                            </Grid>
                         </Grid>
                     </Container>
                 </Box>
@@ -62,11 +63,6 @@ const About = () => {
                                 </Typography> */}
                                 <Typography variant='h6' gutterBottom fontWeight={'400'}>
                                     This versatile tool serves as an invaluable asset in your trading arsenal, equipping you with comprehensive and up-to-the-minute insights. It empowers you to make informed decisions swiftly, seizing profitable windows in the ever-volatile cryptocurrency market. By presenting the price of a particular coin on two distinct exchanges side by side, our software instantly reveals any disparities in pricing. This real-time data is crucial in identifying arbitrage opportunities that arise when these prices diverge, enabling you to execute rapid transactions to your advantage.                            </Typography>
-                                <Box paddingY='3rem'>
-                                    <Button variant="contained" sx={{ boxShadow: 'none', fontSize: '24px', borderRadius: '50px', background: 'linear-gradient(180deg,rgb(255,229,64) 0%,rgb(255,185,57) 100%)', paddingX: '2rem', color: '#000' }}>
-                                        Start Free
-                                    </Button>
-                                </Box>
                             </Box>
                         </Grid>
                     </Grid>
@@ -82,11 +78,7 @@ const About = () => {
                                 </Typography> */}
                                 <Typography variant='h6' gutterBottom fontWeight={'400'}>
                                     Moreover, the software goes beyond price differentials. It also provides you with an in-depth analysis of trading volume on both exchanges. This information is invaluable as it offers a clear understanding of market activity and liquidity, essential factors that contribute to the feasibility of arbitrage trades. However, the pièce de résistance of our software is the presentation of the percentage difference between the prices on the two exchanges. This metric acts as a reliable gauge to swiftly assess the potential profitability of an arbitrage trade.                                </Typography>
-                                <Box paddingY='3rem'>
-                                    <Button variant="contained" sx={{ boxShadow: 'none', fontSize: '24px', borderRadius: '50px', background: 'linear-gradient(180deg,rgb(255,229,64) 0%,rgb(255,185,57) 100%)', paddingX: '2rem', color: '#000' }}>
-                                        Start Free
-                                    </Button>
-                                </Box>
+
                             </Box>
                         </Grid>
                         <Grid md={6} xs={12}>
@@ -150,11 +142,7 @@ const About = () => {
                                 </Typography>
                                 <Typography variant='h6' gutterBottom fontWeight={'400'}>
                                     Manual tracking of cryptocurrency arbitrage opportunities is a task fraught with challenges and limitations. Our software effectively eliminates these hurdles, positioning itself as a remarkable tool that could redefine the trading landscape. It has the potential to become a revenue generator, offering you a competitive edge in a rapidly evolving market.                                </Typography>
-                                <Box paddingY='3rem'>
-                                    <Button variant="contained" sx={{ boxShadow: 'none', fontSize: '24px', borderRadius: '50px', background: 'linear-gradient(180deg,rgb(255,229,64) 0%,rgb(255,185,57) 100%)', paddingX: '2rem', color: '#000' }}>
-                                        Start Free
-                                    </Button>
-                                </Box>
+
                             </Box>
                         </Grid>
 
@@ -171,11 +159,7 @@ const About = () => {
                                 </Typography> */}
                                 <Typography variant='h6' gutterBottom fontWeight={'400'}>
                                     Example Scenario: Imagine working 8 hours daily, conducting 3 transactions per hour with an initial investment of $1000. This could result in daily earnings of $960 and a monthly total of $28,800, all with a $1000 investment.
-                                </Typography>                                <Box paddingY='3rem'>
-                                    <Button variant="contained" sx={{ boxShadow: 'none', fontSize: '24px', borderRadius: '50px', background: 'linear-gradient(180deg,rgb(255,229,64) 0%,rgb(255,185,57) 100%)', paddingX: '2rem', color: '#000' }}>
-                                        Start Free
-                                    </Button>
-                                </Box>
+                                </Typography>
                             </Box>
                         </Grid>
                         <Grid md={6} xs={12}>
@@ -207,6 +191,7 @@ const About = () => {
                     </Grid>
                 </Container>
             </Box>
+            <TermsServiceAbout />
         </div>
     )
 }

@@ -12,10 +12,10 @@ export const get_provider = async (provider) => {
     return { signer };
 }
 
-export async function get_info(provider , accounts) {
+export async function get_info(provider, accounts) {
     try {
         const bsc_rpc = await get_provider(provider);
-        console.log(accounts    )
+        console.log(accounts)
 
         const arbi_bot = new ethers.Contract(Smart_Contract_Address, ABI, bsc_rpc.signer);
         const usdt_token = new ethers.Contract(USDT_Contract_Address, USDTABI, bsc_rpc.signer);
