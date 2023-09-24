@@ -96,15 +96,15 @@ const Footer = ({ router }) => {
         <Divider sx={{ borderColor: '#ccc' }} /> 
             <Collecboxs className='collBoxPadd'>
                 <Container maxWidth='xl'>
-                    <Grid container spacing={1}>
-                        <Grid item lg={5} md={3} sm={12} xs={12}>
+                    {/* <Grid container spacing={1}> */}
+                        {/* <Grid item lg={5} md={3} sm={12} xs={12}>
                             <Box>
                                 <Box paddingTop='10px'>
                                     <img src={logo} width='150px' style={{borderRadius:'12px'}} alt='' />
                                 </Box>
                             </Box>
-                        </Grid>
-                        <Grid item lg={2} md={3} sm={4} xs={6}>
+                        </Grid> */}
+                        {/* <Grid item lg={2} md={3} sm={4} xs={6}>
                             <Box> 
                                 <Hotext>
                                     <Typography variant='h6' gutterBottom component='h3'>
@@ -119,17 +119,17 @@ const Footer = ({ router }) => {
                                             </Itemsl>
                                         </Link>
                                     </Menuitems>
-                                    {/* <Menuitems>
+                                    <Menuitems>
                                         <Link to='/' target='_blank' style={{ textDecoration: 'none' }}>
                                             <Itemsl>
                                                 About Us
                                             </Itemsl>
                                         </Link>
-                                    </Menuitems> */}
+                                    </Menuitems>
                                 </Box>
                             </Box>
-                        </Grid>
-                        <Grid item lg={2} md={3} sm={4} xs={6}>
+                        </Grid> */}
+                        {/* <Grid item lg={2} md={3} sm={4} xs={6}>
                             <Box>
                                 <Hotext>
                                     <Typography variant='h6' gutterBottom component='h3'>
@@ -161,8 +161,8 @@ const Footer = ({ router }) => {
 
                                 </Box>
                             </Box>
-                        </Grid>
-                        <Grid item lg={3} md={3} sm={12} xs={12}>
+                        </Grid> */}
+                        {/* <Grid item lg={3} md={3} sm={12} xs={12}>
                             <Box>
                                 <Hotext>
                                     <Typography variant='h6' gutterBottom component='h3'>
@@ -190,9 +190,9 @@ const Footer = ({ router }) => {
                                     </Menuitems>
                                 </Box>
                             </Box>
-                        </Grid>
-                    </Grid>
-                    <Hr />
+                        </Grid> */}
+                    {/* </Grid> */}
+                    {/* <Hr /> */}
                     <Grid container spacing={1} marginTop='2rem'>
                         <Grid item md={6} xs={12}>
                             <Box display='flex' alignItems='center' flexWrap='wrap' style={{ gap: '20px' }} >

@@ -12,7 +12,7 @@ const About = () => {
                 <Box sx={{ paddingY: { md: '8rem', xs: '3rem' }, position: 'relative' }}>
                     <Container maxWidth='lg' sx={{ marginTop: '3rem' }} >
                         <Grid container spacing={2} alignItems={'center'}>
-                            <Grid item md={7} xs={12}>
+                            <Grid item md={12} xs={12}>
                                 <Box position='relative' >
                                     <Typography variant='h3' color={"#fff"} fontWeight='500' gutterBottom component='h3'>
                                         An A-Team of Crypto Enthusiasts That Love Bot Trading
@@ -22,11 +22,11 @@ const About = () => {
                                     </Typography>
                                 </Box>
                             </Grid>
-                            <Grid item md={5} xs={12}>
+                            {/* <Grid item md={5} xs={12}>
                                 <Box>
                                     <img src={teamimg} alt='img' width={'100%'} style={{ borderRadius: '12px' }} />
                                 </Box>
-                            </Grid>
+                            </Grid> */}
                         </Grid>
                     </Container>
                 </Box>
