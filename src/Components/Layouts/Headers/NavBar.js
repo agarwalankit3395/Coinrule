@@ -32,8 +32,8 @@ const NavBar = () => {
                 <Menuitems>
                     <Box className='topmenus' style={{ textDecoration: 'none' }}>
                         <Itemsl className='dropdown' style={{ display: 'flex', alignItems: 'center' }}>
-                            <Link to='/about' className='dropbtn' style={{ cursor: 'pointer', textDecoration:'none', color:'#fff' }}>
-                                About
+                            <Link to='/home' className='dropbtn' style={{ cursor: 'pointer', textDecoration:'none', color:'#fff' }}>
+                                Home
                             </Link> 
                         </Itemsl>
                     </Box>
