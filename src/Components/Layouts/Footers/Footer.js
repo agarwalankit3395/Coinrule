@@ -206,24 +206,24 @@ const Footer = ({ router }) => {
                         </Grid>
                         <Grid item md={6} xs={12}>
                             <Box display='flex' alignItems='center' justifyContent='end' sx={{ gap: '10px', justifyContent: { xs: 'start', md: 'end' } }} >
-                                <Iconsmain>
+                                {/* <Iconsmain>
                                     <FacebookIcon fontSize='small' sx={{ color: '#fff' }} />
-                                </Iconsmain>
+                                </Iconsmain> */}
                                 <Iconsmain>
                                     <InstagramIcon fontSize='small' sx={{ color: '#fff' }} />
                                 </Iconsmain>
-                                <Iconsmain>
+                                {/* <Iconsmain>
                                     <LinkedInIcon fontSize='small' sx={{ color: '#fff' }} />
-                                </Iconsmain>
+                                </Iconsmain> */}
                                 <Iconsmain>
                                     <TelegramIcon fontSize='small' sx={{ color: '#fff' }} />
                                 </Iconsmain>
-                                <Iconsmain>
+                                {/* <Iconsmain>
                                     <TwitterIcon fontSize='small' sx={{ color: '#fff' }} />
                                 </Iconsmain>
                                 <Iconsmain>
                                     <YouTubeIcon fontSize='small' sx={{ color: '#fff' }} />
-                                </Iconsmain>
+                                </Iconsmain> */}
 
                             </Box>
                         </Grid>

@@ -14,10 +14,10 @@ const About = () => {
                         <Grid container spacing={2} alignItems={'center'}>
                             <Grid item md={12} xs={12}>
                                 <Box position='relative' >
-                                    <Typography variant='h3' color={"#fff"} fontWeight='500' gutterBottom component='h3'>
+                                    {/* <Typography variant='h3' color={"#fff"} fontWeight='500' gutterBottom component='h3'>
                                         An A-Team of Crypto Enthusiasts That Love Bot Trading
-                                    </Typography>
-                                    <Typography variant='h5' textAlign={'justify'} color={"#fff"} fontWeight='300' gutterBottom component='h5' paddingY={'1rem'}>
+                                    </Typography> */}
+                                    <Typography variant='h5' textAlign={'left'} color={"#fff"} fontWeight='300' gutterBottom component='h5' paddingY={'1rem'}>
                                         We are excited to introduce a revolutionary cryptocurrency arbitrage software that has the potential to reshape the way you approach crypto trading. Our cutting-edge software has been meticulously developed to cater to both novices and experts in the field, offering real-time monitoring of arbitrage opportunities across a diverse range of more than 10 crypto exchanges. Among these exchanges, you'll find prominent names such as Binance, Kraken, MXC, KuCoin, Bybit, and several others.
                                     </Typography>
                                 </Box>
@@ -61,7 +61,7 @@ const About = () => {
                                 {/* <Typography variant='h4' gutterBottom fontWeight={'500'}>
                                     Create Automated Trading Strategies Running 24/7
                                 </Typography> */}
-                                <Typography variant='h6' textAlign={'justify'} gutterBottom fontWeight={'400'}>
+                                <Typography variant='h6' textAlign={'center'} gutterBottom fontWeight={'400'}>
                                     This versatile tool serves as an invaluable asset in your trading arsenal, equipping you with comprehensive and up-to-the-minute insights. It empowers you to make informed decisions swiftly, seizing profitable windows in the ever-volatile cryptocurrency market. By presenting the price of a particular coin on two distinct exchanges side by side, our software instantly reveals any disparities in pricing. This real-time data is crucial in identifying arbitrage opportunities that arise when these prices diverge, enabling you to execute rapid transactions to your advantage.                            </Typography>
                             </Box>
                         </Grid>

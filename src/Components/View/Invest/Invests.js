@@ -12,7 +12,7 @@ const Invests = () => {
                             <Grid item md={8} xs={12}>
                                 <Box position='relative' >
                                     <Typography variant='h3' color={"#fff"} fontWeight='300' gutterBottom component='h3'>
-                                        Invest In Us Crypto Arbitrage
+                                        How to use Crypto Arbitrage
                                     </Typography>
                                     <Typography variant='h5' color={"#fff"} fontWeight='100' gutterBottom component='h5' paddingY={'0.5rem'}>
                                         Symbol 1 means which token it is on one cryptocurrency exchange, and the pair is always usdt for easier tracking
