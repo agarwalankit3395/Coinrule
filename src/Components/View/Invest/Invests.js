@@ -53,4 +53,4 @@ const Invests = () => {
     )
 }
 
-export default Invests;
+export default Invests; 
