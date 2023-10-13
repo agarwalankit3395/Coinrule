@@ -3,7 +3,7 @@ import { Toolbar, Box, useMediaQuery, useTheme, Container } from '@mui/material'
 import DarkModeOutlinedIcon from '@mui/icons-material/DarkModeOutlined';
 import WbSunnyRoundedIcon from '@mui/icons-material/WbSunnyRounded';
 
-import logo from './arbitrage.png'
+import logo from './DitiaeBank.png'
 import DrawerComponent from './DrawerComponent';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
@@ -61,7 +61,7 @@ const HeaderBar = ({router }) => {
                     <Toolbar sx={{paddingX:'0px'}}>
                         <Box paddingY='8px' component={Link} to='/'>
                             <Logo>
-                                <Img src={logo} style={{borderRadius:'12px'}} alt='' />
+                                <Img src={logo} sizes='' style={{borderRadius:'12px'}} alt='' />
                             </Logo>
                         </Box>
                         {
