@@ -15,7 +15,7 @@ const Pages = [
     route: '/price'
   },
   {
-    titles: 'Invest',
+    titles: 'Crypto Arbitrage',
     route: '/invest'
   } 
 ]

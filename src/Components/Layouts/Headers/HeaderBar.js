@@ -25,7 +25,7 @@ const Navbarmain = styled.div`
 
 const Logo = styled.div``
 const Img = styled.img` 
-    width:90px
+    width:150px
 `
 const DarkLight = styled.div`
     margin-left: 1rem;
