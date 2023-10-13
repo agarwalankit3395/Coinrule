@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 
 const Pages = [
   {
-    titles: 'About',
+    titles: 'Home',
     route: '/about'
   }, 
   {

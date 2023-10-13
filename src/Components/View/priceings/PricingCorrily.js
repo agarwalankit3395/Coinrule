@@ -301,7 +301,7 @@ const PricingCorrily = () => {
               }}
             >
               <Box>
-                <Typography variant="h4" fontWeight={"500"} color="#fff">
+                <Typography variant="h5" fontWeight={"500"} color="#fff">
                   Monthly Plan - 25USDT
                 </Typography>
               </Box>
@@ -312,7 +312,7 @@ const PricingCorrily = () => {
                       <ListItemIcon>
                         <DoneIcon sx={{ color: "#fff" }} />
                       </ListItemIcon>
-                      <Typography variant="h6" fontWeight={"400"} color="#fff">
+                      <Typography variant="body1" fontWeight={"400"} color="#fff">
                         {data}
                       </Typography>
                     </ListItem>
@@ -335,7 +335,8 @@ const PricingCorrily = () => {
                           "linear-gradient(180deg,rgb(255,229,64) 0%,rgb(255,185,57) 100%)",
                         paddingX: "1rem",
                         color: "#fff",
-                        textTransform: "capitalize"
+                        textTransform: "capitalize",
+                        width:'100%'
                       }}
                     >
                       Connect Wallet
@@ -352,7 +353,8 @@ const PricingCorrily = () => {
                           "linear-gradient(180deg,rgb(255,229,64) 0%,rgb(255,185,57) 100%)",
                         paddingX: "2rem",
                         color: "#fff",
-                        textTransform: "capitalize"
+                        textTransform: "capitalize",
+                        width:'100%'
                       }}
                     >
                       {allowancePrice > 0 ? "Subscribe" : "Allowance"}
@@ -386,7 +388,7 @@ const PricingCorrily = () => {
               }}
             >
               <Box>
-                <Typography variant="h4" fontWeight={"500"} color="#fff">
+                <Typography variant="h5" fontWeight={"500"} color="#fff">
                   Year Plan - 200 USDT
                 </Typography>
               </Box>
@@ -397,7 +399,7 @@ const PricingCorrily = () => {
                       <ListItemIcon>
                         <DoneIcon sx={{ color: "#fff" }} />
                       </ListItemIcon>
-                      <Typography variant="h6" fontWeight={"400"} color="#fff">
+                      <Typography variant="body1" fontWeight={"400"} color="#fff">
                         {yeardata}
                       </Typography>
                     </ListItem>
@@ -420,7 +422,8 @@ const PricingCorrily = () => {
                           "linear-gradient(180deg,rgb(255,229,64) 0%,rgb(255,185,57) 100%)",
                         paddingX: "1rem",
                         color: "#fff",
-                        textTransform: "capitalize"
+                        textTransform: "capitalize",
+                        width:'100%'
                       }}
                     >
                       Connect Wallet
@@ -437,7 +440,8 @@ const PricingCorrily = () => {
                           "linear-gradient(180deg,rgb(255,229,64) 0%,rgb(255,185,57) 100%)",
                         paddingX: "2rem",
                         color: "#fff",
-                        textTransform: "capitalize"
+                        textTransform: "capitalize",
+                        width:'100%'
                       }}
                     >
                       {allowancePrice > 0 ? "Subscribe" : "Allowance"}
