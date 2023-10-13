@@ -17,7 +17,7 @@ const About = () => {
                                     <Typography variant='h3' color={"#fff"} fontWeight='500' gutterBottom component='h3'>
                                         An A-Team of Crypto Enthusiasts That Love Bot Trading
                                     </Typography>
-                                    <Typography variant='h5' color={"#fff"} fontWeight='300' gutterBottom component='h5' paddingY={'1rem'}>
+                                    <Typography variant='h5' textAlign={'justify'} color={"#fff"} fontWeight='300' gutterBottom component='h5' paddingY={'1rem'}>
                                         We are excited to introduce a revolutionary cryptocurrency arbitrage software that has the potential to reshape the way you approach crypto trading. Our cutting-edge software has been meticulously developed to cater to both novices and experts in the field, offering real-time monitoring of arbitrage opportunities across a diverse range of more than 10 crypto exchanges. Among these exchanges, you'll find prominent names such as Binance, Kraken, MXC, KuCoin, Bybit, and several others.
                                     </Typography>
                                 </Box>
@@ -34,7 +34,7 @@ const About = () => {
             <Box sx={{ paddingY: { md: '6rem', sm: '3rem', xs: '2rem' } }} position={'relative'}>
                 <Container maxWidth="lg">
                     <Grid container spacing={2} alignItems={'center'}>
-                        <Grid md={6} xs={12}>
+                        <Grid item md={6} xs={12}>
                             <Box sx={{ width: { md: '70%' } }} >
                                 <svg class="index-trade__icon" xmlns="https://www.w3.org/2000/svg" viewBox="0 0 323 231">
                                     <g fill="none" fill-rule="evenodd">
@@ -56,12 +56,12 @@ const About = () => {
                                 </svg>
                             </Box>
                         </Grid>
-                        <Grid md={6} xs={12}>
+                        <Grid item md={6} xs={12}>
                             <Box>
                                 {/* <Typography variant='h4' gutterBottom fontWeight={'500'}>
                                     Create Automated Trading Strategies Running 24/7
                                 </Typography> */}
-                                <Typography variant='h6' gutterBottom fontWeight={'400'}>
+                                <Typography variant='h6' textAlign={'justify'} gutterBottom fontWeight={'400'}>
                                     This versatile tool serves as an invaluable asset in your trading arsenal, equipping you with comprehensive and up-to-the-minute insights. It empowers you to make informed decisions swiftly, seizing profitable windows in the ever-volatile cryptocurrency market. By presenting the price of a particular coin on two distinct exchanges side by side, our software instantly reveals any disparities in pricing. This real-time data is crucial in identifying arbitrage opportunities that arise when these prices diverge, enabling you to execute rapid transactions to your advantage.                            </Typography>
                             </Box>
                         </Grid>
@@ -71,17 +71,17 @@ const About = () => {
             <Box sx={{ paddingY: { md: '6rem', sm: '3rem', xs: '2rem' }, background: '#F2F2F2' }} position={'relative'}>
                 <Container maxWidth="lg">
                     <Grid container spacing={2} alignItems={'center'}>
-                        <Grid md={6} xs={12}>
+                        <Grid item md={6} xs={12}>
                             <Box>
                                 {/* <Typography variant='h4' gutterBottom fontWeight={'500'}>
                                     Trade Across Exchanges
                                 </Typography> */}
-                                <Typography variant='h6' gutterBottom fontWeight={'400'}>
+                                <Typography variant='h6' textAlign={'justify'} gutterBottom fontWeight={'400'}>
                                     Moreover, the software goes beyond price differentials. It also provides you with an in-depth analysis of trading volume on both exchanges. This information is invaluable as it offers a clear understanding of market activity and liquidity, essential factors that contribute to the feasibility of arbitrage trades. However, the pièce de résistance of our software is the presentation of the percentage difference between the prices on the two exchanges. This metric acts as a reliable gauge to swiftly assess the potential profitability of an arbitrage trade.                                </Typography>
 
                             </Box>
                         </Grid>
-                        <Grid md={6} xs={12}>
+                        <Grid item md={6} xs={12}>
                             <Box sx={{ width: { md: '50%' } }} margin={'auto'}>
                                 <svg class="index-trade__icon" xmlns="https://www.w3.org/2000/svg" viewBox="0 0 256 265">
                                     <g fill="none" fill-rule="evenodd">
@@ -113,7 +113,7 @@ const About = () => {
             <Box sx={{ paddingY: { md: '6rem', sm: '3rem', xs: '2rem' } }} position={'relative'}>
                 <Container maxWidth="lg">
                     <Grid container spacing={2} alignItems={'center'}>
-                        <Grid md={6} xs={12}>
+                        <Grid item md={6} xs={12}>
                             <Box sx={{ width: { md: '70%' } }} >
                                 <svg class="index-trade__icon" xmlns="https://www.w3.org/2000/svg" viewBox="0 0 323 231">
                                     <g fill="none" fill-rule="evenodd">
@@ -135,12 +135,12 @@ const About = () => {
                                 </svg>
                             </Box>
                         </Grid>
-                        <Grid md={6} xs={12}>
+                        <Grid item md={6} xs={12}>
                             <Box>
                                 <Typography variant='h4' gutterBottom fontWeight={'500'}>
                                     We present to you Arbitrage crypto pro software
                                 </Typography>
-                                <Typography variant='h6' gutterBottom fontWeight={'400'}>
+                                <Typography variant='h6' textAlign={'justify'} gutterBottom fontWeight={'400'}>
                                     Manual tracking of cryptocurrency arbitrage opportunities is a task fraught with challenges and limitations. Our software effectively eliminates these hurdles, positioning itself as a remarkable tool that could redefine the trading landscape. It has the potential to become a revenue generator, offering you a competitive edge in a rapidly evolving market.                                </Typography>
 
                             </Box>
@@ -152,17 +152,17 @@ const About = () => {
             <Box sx={{ paddingY: { md: '6rem', sm: '3rem', xs: '2rem' }, background: '#F2F2F2' }} position={'relative'}>
                 <Container maxWidth="lg">
                     <Grid container spacing={2} alignItems={'center'}>
-                        <Grid md={6} xs={12}>
+                        <Grid item md={6} xs={12}>
                             <Box>
                                 {/* <Typography variant='h4' gutterBottom fontWeight={'500'}>
                                     Trade Across Exchanges
                                 </Typography> */}
-                                <Typography variant='h6' gutterBottom fontWeight={'400'}>
+                                <Typography textAlign={'justify'} variant='h6' gutterBottom fontWeight={'400'}>
                                     Example Scenario: Imagine working 8 hours daily, conducting 3 transactions per hour with an initial investment of $1000. This could result in daily earnings of $960 and a monthly total of $28,800, all with a $1000 investment.
                                 </Typography>
                             </Box>
                         </Grid>
-                        <Grid md={6} xs={12}>
+                        <Grid item md={6} xs={12}>
                             <Box sx={{ width: { md: '50%' } }} margin={'auto'}>
                                 <svg class="index-trade__icon" xmlns="https://www.w3.org/2000/svg" viewBox="0 0 256 265">
                                     <g fill="none" fill-rule="evenodd">

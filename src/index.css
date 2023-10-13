@@ -26,6 +26,13 @@ button {
   font-weight: normal;
 }
 
+.walletAddress_length {
+  width: 80px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
 /* sub navbar menu  css*/
 .dropbtn {
   position: relative;
@@ -80,11 +87,11 @@ button {
   width: 100%;
   z-index: 0;
   background-repeat: no-repeat;
-  background-size: cover; 
+  background-size: cover;
 
 }
- 
- 
+
+
 .animation-logo {
   position: relative;
 }
@@ -135,15 +142,15 @@ button {
 
 
 @keyframes wwrrightstar {
-  0% { 
+  0% {
     transform: translateY(-20%);
   }
 
-  50% { 
+  50% {
     transform: translateY(20%);
   }
 
-  100% { 
+  100% {
     transform: translateY(-20%);
   }
 }
@@ -228,4 +235,3 @@ button {
   opacity: 0.1;
 
 }
- 

@@ -23,11 +23,9 @@ const Navbarmain = styled.div`
     height:100px;
 `
 
-const Logo = styled.div`  
-    gap:5px; 
-`
+const Logo = styled.div``
 const Img = styled.img` 
-    width:120px
+    width:90px
 `
 const DarkLight = styled.div`
     margin-left: 1rem;
@@ -60,7 +58,7 @@ const HeaderBar = ({router }) => {
         <React.Fragment>
             <Navbarmain>
                 <Container maxWidth='xl'>
-                    <Toolbar>
+                    <Toolbar sx={{paddingX:'0px'}}>
                         <Box paddingY='8px' component={Link} to='/'>
                             <Logo>
                                 <Img src={logo} style={{borderRadius:'12px'}} alt='' />

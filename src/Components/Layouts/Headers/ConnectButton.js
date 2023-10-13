@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 import useWeb3 from "../../utils/useWeb3";
 import { get_info } from "../../utils/SmartContract";
-import { Button } from "@mui/material";
+import { Box, Button } from "@mui/material";
 
 import Stack from "@mui/material/Stack";
 import Snackbar from "@mui/material/Snackbar";
@@ -151,11 +151,11 @@ const ConnectButton = () => {
     setWalletAddress(null);
     setConnected(true);
   };
-
+ 
   return (
     <div>
       {walletAddress == null ? (
-        <Button variant="contained" onClick={handleConnectMetaMask}>
+        <Button variant="contained" onClick={handleConnectMetaMask} sx={{ paddingY: '13px', backgroundColor: '#e735c3 !important', boxShadow: 'none !important' }}>
           Connect Wallet
         </Button>
       ) : (
@@ -164,8 +164,12 @@ const ConnectButton = () => {
         //   <div>
         //   </div>
         // </div>
-        <Button variant="contained" onClick={handleDisconnectMetaMask} endIcon={<LogoutIcon sx={{ color : '#fff'}} />}>
-          {walletAddress}
+        <Button variant="contained" onClick={handleDisconnectMetaMask}
+          endIcon={<LogoutIcon sx={{ color: '#fff' }} />}
+          sx={{ paddingY: '13px', backgroundColor: '#e735c3 !important', boxShadow: 'none !important',
+        }}
+        >
+        <Box className="walletAddress_length" >{walletAddress}</Box>
         </Button>
       )}
       <Stack spacing={2} sx={{ width: "100%" }}>
