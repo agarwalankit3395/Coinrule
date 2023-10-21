@@ -23,9 +23,12 @@ const About = () => {
                                     {/* <Typography variant='h3' color={"#fff"} fontWeight='500' gutterBottom component='h3'>
                                         An A-Team of Crypto Enthusiasts That Love Bot Trading
                                     </Typography> */}
-                                    <Typography variant='h5' textAlign={'left'} color={"#fff"} fontWeight='300' gutterBottom component='h5' paddingY={'1rem'}>
-                                        We are excited to introduce a revolutionary cryptocurrency arbitrage software that has the potential to reshape the way you approach crypto trading. Our cutting-edge software has been meticulously developed to cater to both novices and experts in the field, offering real-time monitoring of arbitrage opportunities across a diverse range of more than 10 crypto exchanges. Among these exchanges, you'll find prominent names such as Binance, Kraken, MXC, KuCoin, Bybit, and several others.
+                                    <Typography variant='h2' textAlign={'center'} color={"#fff"} fontWeight='500' gutterBottom component='h2' paddingY={'1rem'}>
+                                    We present to you Crypto arbitrage pro
                                     </Typography>
+                                    {/* <Typography variant='h5' textAlign={'left'} color={"#fff"} fontWeight='300' gutterBottom component='h5' paddingY={'1rem'}>
+                                        We are excited to introduce a revolutionary cryptocurrency arbitrage software that has the potential to reshape the way you approach crypto trading. Our cutting-edge software has been meticulously developed to cater to both novices and experts in the field, offering real-time monitoring of arbitrage opportunities across a diverse range of more than 10 crypto exchanges. Among these exchanges, you'll find prominent names such as Binance, Kraken, MXC, KuCoin, Bybit, and several others.
+                                    </Typography> */}
                                 </Box>
                             </Grid>
                             <Grid item md={6} xs={12}>
@@ -37,11 +40,11 @@ const About = () => {
                     </Container>
                 </Box>
             </Box>
-            <Box sx={{ paddingY: { md: '6rem', sm: '3rem', xs: '2rem' } }} position={'relative'}>
+            <Box sx={{ paddingY: { md: '5rem', sm: '3rem', xs: '2rem' } }} position={'relative'}>
                 <Container maxWidth="lg">
                     <Grid container spacing={1} alignItems={'center'}>
                         <Grid item md={6} xs={12}>
-                            <Box sx={{ width: { md: '70%' },background: '#000000'  }} >
+                            <Box sx={{ width: { md: '90%' } }} >
                                 <img src={profileweek5} width='100%' alt='profile1' />
                                 {/* <svg class="index-trade__icon" xmlns="https://www.w3.org/2000/svg" viewBox="0 0 323 231">
                                     <g fill="none" fill-rule="evenodd">

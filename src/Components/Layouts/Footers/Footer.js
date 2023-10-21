@@ -199,7 +199,7 @@ const Footer = ({ router }) => {
 
                                 <Copys>
                                     <Typography variant='body2' >
-                                        © Copyright 2023 Arbitrage. All Rights Reserved
+                                        © Copyright 2023 Crypto arbitrage pro. All Rights Reserved
                                     </Typography>
                                 </Copys>
                             </Box>
@@ -219,6 +219,13 @@ const Footer = ({ router }) => {
                                         <Link to='/termsofServices' target='_blank' style={{ textDecoration: 'none' }}>
                                             <Itemsl>
                                             Terms of Service
+                                            </Itemsl>
+                                        </Link>
+                                    </Menuitems>
+                                    <Menuitems>
+                                        <Link to='/termsofServices' target='_blank' style={{ textDecoration: 'none' }}>
+                                            <Itemsl>
+                                            Contact Us
                                             </Itemsl>
                                         </Link>
                                     </Menuitems>
