@@ -9,6 +9,7 @@ import profileweek2 from '../../../assets/homePageImg/ProfitWeek-2.png';
 import profileweek3 from '../../../assets/homePageImg/ProfitWeek-3.png';
 import profileweek4 from '../../../assets/homePageImg/ProfitWeek-4.png';
 import profileweek5 from '../../../assets/homePageImg/ProfitWeek-1.2.png';
+import profileweek6 from '../../../assets/homePageImg/ProfitWeek-3.2.png'
 
 const About = () => {
     return (
@@ -181,7 +182,7 @@ const About = () => {
                         </Grid>
                         <Grid item md={6} xs={12}>
                             <Box sx={{ width: { md: '70%' } }} margin={'auto'}>
-                                <img src={profileweek3} width='100%' alt='profile3' />
+                                <img src={profileweek6} width='100%' alt='profile3' />
                                 {/* <svg class="index-trade__icon" xmlns="https://www.w3.org/2000/svg" viewBox="0 0 256 265">
                                     <g fill="none" fill-rule="evenodd">
                                         <path fill="#F58E6F" d="M205.502 233.608c0 5.693-4.626 10.307-10.332 10.307-5.705 0-10.33-4.614-10.33-10.307 0-5.693 4.625-10.309 10.33-10.309 5.706 0 10.332 4.616 10.332 10.309"></path>
