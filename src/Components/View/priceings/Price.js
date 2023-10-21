@@ -6,15 +6,15 @@ const Price = () => {
     return (
         <div>
             <Box className='herosbg'>
-                <Box sx={{ paddingY: { md: '8rem', xs: '3rem' } }}>
+                <Box sx={{ paddingY: { md: '6rem', xs: '3rem' }  }}>
                     <Container maxWidth='lg' sx={{ marginTop: '3rem' }} >
-                        <Grid container spacing={2}>
-                            <Grid item md={8} xs={12}>
-                                <Box position='relative' >
-                                    <Typography variant='h3' color={"#fff"} fontWeight='500' gutterBottom component='h3'>
+                        <Grid container spacing={1}>
+                            <Grid item md={12} xs={12}>
+                                <Box position="relative" >
+                                    <Typography variant='h3' color={"#fff"} fontWeight='500' gutterBottom component='h3' textAlign="center">
                                         Pricing
                                     </Typography>
-                                    <Typography variant='h5' color={"#fff"} fontWeight='300' gutterBottom component='h5'>
+                                    <Typography variant='h5' fontWeight='300' gutterBottom component='h5'>
                                         With Coinrule you can easily develop your own trading strategies and set them up to run automatically on your favourite exchange. Start with a Free Account Today
                                     </Typography>
                                 </Box>

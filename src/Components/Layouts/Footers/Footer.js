@@ -13,7 +13,7 @@ import TelegramIcon from '@mui/icons-material/Telegram';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import { device } from '../../utils/Device'
 import withRouter from '../../../withRouter'
-
+import Aboutus from '../../View/aboutUs/Aboutus'
 
 const Collecboxs = styled.div`
     background: ${({ theme }) => theme.boxbg};
@@ -93,19 +93,19 @@ const Submitbtn = styled.button`
 const Footer = ({ router }) => {
     return (
         <div>
-        <Divider sx={{ borderColor: '#ccc' }} /> 
+            <Divider sx={{ borderColor: '#ccc' }} />
             <Collecboxs className='collBoxPadd'>
                 <Container maxWidth='xl'>
-                    {/* <Grid container spacing={1}> */}
-                        {/* <Grid item lg={5} md={3} sm={12} xs={12}>
+                    {/* <Grid container spacing={1}>
+                        <Grid item lg={5} md={3} sm={12} xs={12}>
                             <Box>
                                 <Box paddingTop='10px'>
-                                    <img src={logo} width='150px' style={{borderRadius:'12px'}} alt='' />
+                                    <img src={logo} width='150px' style={{ borderRadius: '12px' }} alt='' />
                                 </Box>
                             </Box>
-                        </Grid> */}
-                        {/* <Grid item lg={2} md={3} sm={4} xs={6}>
-                            <Box> 
+                        </Grid>
+                        <Grid item lg={2} md={3} sm={4} xs={6}>
+                            <Box>
                                 <Hotext>
                                     <Typography variant='h6' gutterBottom component='h3'>
                                         PRODUCT
@@ -115,7 +115,7 @@ const Footer = ({ router }) => {
                                     <Menuitems>
                                         <Link to='/' target='_blank' style={{ textDecoration: 'none' }}>
                                             <Itemsl>
-                                            Crypto Arbitrage
+                                                Crypto Arbitrage
                                             </Itemsl>
                                         </Link>
                                     </Menuitems>
@@ -128,8 +128,8 @@ const Footer = ({ router }) => {
                                     </Menuitems>
                                 </Box>
                             </Box>
-                        </Grid> */}
-                        {/* <Grid item lg={2} md={3} sm={4} xs={6}>
+                        </Grid>
+                        <Grid item lg={2} md={3} sm={4} xs={6}>
                             <Box>
                                 <Hotext>
                                     <Typography variant='h6' gutterBottom component='h3'>
@@ -161,8 +161,8 @@ const Footer = ({ router }) => {
 
                                 </Box>
                             </Box>
-                        </Grid> */}
-                        {/* <Grid item lg={3} md={3} sm={12} xs={12}>
+                        </Grid>
+                        <Grid item lg={3} md={3} sm={12} xs={12}>
                             <Box>
                                 <Hotext>
                                     <Typography variant='h6' gutterBottom component='h3'>
@@ -190,12 +190,12 @@ const Footer = ({ router }) => {
                                     </Menuitems>
                                 </Box>
                             </Box>
-                        </Grid> */}
-                    {/* </Grid> */}
+                        </Grid>
+                    </Grid> */}
                     {/* <Hr /> */}
-                    <Grid container spacing={1} marginTop='2rem'>
-                        <Grid item md={6} xs={12}>
-                            <Box display='flex' alignItems='center' flexWrap='wrap' style={{ gap: '20px' }} >
+                    <Grid container spacing={1} marginTop='1rem' >
+                        <Grid item lg={4} md={4} sm={12} xs={12}>
+                            <Box display='flex' alignItems='center' justifyContent='center' flexWrap='wrap' style={{ gap: '20px', justifyContent: {   xs: 'center', md: 'start' }  }} >
 
                                 <Copys>
                                     <Typography variant='body2' >
@@ -204,8 +204,29 @@ const Footer = ({ router }) => {
                                 </Copys>
                             </Box>
                         </Grid>
-                        <Grid item md={6} xs={12}>
-                            <Box display='flex' alignItems='center' justifyContent='end' sx={{ gap: '10px', justifyContent: { xs: 'start', md: 'end' } }} >
+                        <Grid item lg={4} md={4} sm={12} xs={12}  >
+                            {/* <Box> */}
+
+                                <Box display='flex' alignItems='center' justifyContent='center' sx={{ gap: '22px', justifyContent: {  xs: 'center', md: 'end' } }}>
+                                    <Menuitems >
+                                        <Link to='/aboutus' target='_blank' style={{ textDecoration: 'none' }}>
+                                            <Itemsl>
+                                            About Us
+                                            </Itemsl>
+                                        </Link>
+                                    </Menuitems>
+                                    <Menuitems>
+                                        <Link to='/termsofServices' target='_blank' style={{ textDecoration: 'none' }}>
+                                            <Itemsl>
+                                            Terms of Service
+                                            </Itemsl>
+                                        </Link>
+                                    </Menuitems>
+                                </Box>
+                            {/* </Box> */}
+                        </Grid>
+                        <Grid item lg={4} md={4} sm={12} xs={12}>
+                            <Box display='flex' alignItems='center' justifyContent='end' sx={{ gap: '10px', justifyContent: { xs: 'center', md: 'end' } }} >
                                 {/* <Iconsmain>
                                     <FacebookIcon fontSize='small' sx={{ color: '#fff' }} />
                                 </Iconsmain> */}

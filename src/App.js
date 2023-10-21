@@ -14,7 +14,8 @@ import Price from './Components/View/priceings/Price';
 import Invests from './Components/View/Invest/Invests';
 import About from './Components/View/abouts/About';
 import { Web3ContextProvider } from './Components/utils/WalletContext';
-
+import Aboutus from './Components/View/aboutUs/Aboutus';
+import Serviceterms from './Components/View/termofServices/Serviceterms';
 
 const Wrapper = styled.div`  
   color: ${({ theme }) => theme.text}; 
@@ -37,6 +38,8 @@ const App = (props) => {
               <Route path='/price' element={<Price />} />
               <Route path='/invest' element={<Invests />} />
               <Route path='/faq' element={<FAQ />} />
+              <Route path='/aboutus' element={<Aboutus />} />
+              <Route path='/termsofServices' element={<Serviceterms />} />
             </Routes>
           </Wrapper>
 

@@ -3,16 +3,21 @@ import React from 'react'
 import teamimg from '../../../assets/teamPhoto.jpg'
 import TermsServiceAbout from '../MainPage/TermsServiceAbout';
 
-
+import macbook from '../../../assets/homePageImg/macbook.png';
+import profileweek1 from '../../../assets/homePageImg/ProfitWeek-1.png';
+import profileweek2 from '../../../assets/homePageImg/ProfitWeek-2.png';
+import profileweek3 from '../../../assets/homePageImg/ProfitWeek-3.png';
+import profileweek4 from '../../../assets/homePageImg/ProfitWeek-4.png';
+import profileweek5 from '../../../assets/homePageImg/ProfitWeek-1.2.png';
 
 const About = () => {
     return (
         <div>
             <Box className='herosbg'>
-                <Box sx={{ paddingY: { md: '8rem', xs: '3rem' }, position: 'relative' }}>
+                <Box sx={{ paddingY: { md: '6rem', xs: '3rem' }, position: 'relative' }}>
                     <Container maxWidth='lg' sx={{ marginTop: '3rem' }} >
-                        <Grid container spacing={2} alignItems={'center'}>
-                            <Grid item md={12} xs={12}>
+                        <Grid container spacing={1} alignItems={'center'}>
+                            <Grid item md={6} xs={12}>
                                 <Box position='relative' >
                                     {/* <Typography variant='h3' color={"#fff"} fontWeight='500' gutterBottom component='h3'>
                                         An A-Team of Crypto Enthusiasts That Love Bot Trading
@@ -22,21 +27,22 @@ const About = () => {
                                     </Typography>
                                 </Box>
                             </Grid>
-                            {/* <Grid item md={5} xs={12}>
+                            <Grid item md={6} xs={12}>
                                 <Box>
-                                    <img src={teamimg} alt='img' width={'100%'} style={{ borderRadius: '12px' }} />
+                                    <img src={macbook} alt='img' width={'100%'} />
                                 </Box>
-                            </Grid> */}
+                            </Grid>
                         </Grid>
                     </Container>
                 </Box>
             </Box>
             <Box sx={{ paddingY: { md: '6rem', sm: '3rem', xs: '2rem' } }} position={'relative'}>
                 <Container maxWidth="lg">
-                    <Grid container spacing={2} alignItems={'center'}>
+                    <Grid container spacing={1} alignItems={'center'}>
                         <Grid item md={6} xs={12}>
-                            <Box sx={{ width: { md: '70%' } }} >
-                                <svg class="index-trade__icon" xmlns="https://www.w3.org/2000/svg" viewBox="0 0 323 231">
+                            <Box sx={{ width: { md: '70%' },background: '#000000'  }} >
+                                <img src={profileweek5} width='100%' alt='profile1' />
+                                {/* <svg class="index-trade__icon" xmlns="https://www.w3.org/2000/svg" viewBox="0 0 323 231">
                                     <g fill="none" fill-rule="evenodd">
                                         <path fill="#4A545F" d="M95.144 5.518h3V-.001h-3zM95.144 20.723h3v-5.519h-3zM101.486 11.861h5.519v-3h-5.519zM86.282 11.862h5.519v-3h-5.519zM286.449 133.046h3v-5.519h-3zM286.449 148.25h3v-5.519h-3zM292.792 139.39v-3l5.519-.001v3zM277.587 139.39h5.519v-3h-5.519z"></path>
                                         <path fill="#F58E6F" d="M34.835 178.82a3.99 3.99 0 1 1-7.98 0 3.99 3.99 0 0 1 7.98 0"></path>
@@ -53,7 +59,7 @@ const About = () => {
                                         <path fill="#F58E6F" d="M228.002 118.301v11.583l-12.427-5.714 6.107-2.883zM242.161 124.17l-12.426 5.714v-11.583l6.321 2.986z"></path>
                                         <path fill="#4A545F" d="M80.936 230.359h3v-3h-3v3zm6 0h3v-3h-3v3zm6 0h3v-3h-3v3zm6 0h3v-3h-3v3zm6 0h3v-3h-3v3zm6 0h3v-3h-3v3zm6 0h3v-3h-3v3zm6 0h3v-3h-3v3zm6 0h3v-3h-3v3zm6 0h3v-3h-3v3zm6 0h3v-3h-3v3zm6 0h3v-3h-3v3zm6 0h3v-3h-3v3zm6 0h3v-3h-3v3zm6 0h3v-3h-3v3zm6 0h3v-3h-3v3zm6 0h3v-3h-3v3zm6 0h3v-3h-3v3zm6 0h3v-3h-3v3zm6 0h3v-3h-3v3zm6 0h3v-3h-3v3zm6 0h3v-3h-3v3zm6 0h3v-3h-3v3zm6 0h3v-3h-3v3zm6 0h3v-3h-3v3zm6 0h3v-3h-3v3zm6 0h3v-3h-3v3zm6 0h3v-3h-3v3zm6 0h3v-3h-3v3zm6 0h3v-3h-3v3zm6 0h3v-3h-3v3zm6 0h2.612v-3h-2.612v3zM49.427 19.672h3v-2.613h-3v2.613zm0 6h3v-3h-3v3zm0 6h3v-3h-3v3zm0 6h3v-3h-3v3zm0 6h3v-3h-3v3zm0 6h3v-3h-3v3zm0 6h3v-3h-3v3zm0 6h3v-3h-3v3zm0 6h3v-3h-3v3zm0 6h3v-3h-3v3zm0 6h3v-3h-3v3zm0 6h3v-3h-3v3zm0 6h3v-3h-3v3zm0 6h3v-3h-3v3zm0 6h3v-3h-3v3zm0 6h3v-3h-3v3zm0 6h3v-3h-3v3zm0 6h3v-3h-3v3zm0 6h3v-3h-3v3zm0 6h3v-3h-3v3zm0 6h3v-3h-3v3zm0 6h3v-3h-3v3zm0 6h3v-3h-3v3zm0 6h3v-3h-3v3zm0 6h3v-3h-3v3zm0 6h3v-3h-3v3zm0 6h3v-3h-3v3zm0 6h3v-3h-3v3zm0 6h3v-3h-3v3zm0 6h3v-3h-3v3zm0 6h3v-3h-3v3zm0 6h3v-3h-3v3zm209.97-180.403l-.094-.085-.074.066-.943-1.008.007-.007-1.099-1.188 2.11-1.95 2.13 1.97-2.038 2.203zm-4.575 4.054l-2.035-2.204 2.203-2.035 2.036 2.204-2.204 2.035zm8.981.017l-2.202-2.035 2.036-2.203 2.204 2.035-2.038 2.203zm-13.387 4.055l-2.036-2.204 2.203-2.035 2.036 2.203-2.203 2.035zm17.796.018l-2.204-2.035 2.035-2.206 2.204 2.036-2.036 2.206zm-22.203 4.053l-2.035-2.203 2.203-2.035 2.035 2.203-2.203 2.035zm26.609.018l-2.204-2.035 2.038-2.203 2.202 2.035-2.036 2.203zm-31.016 4.054l-2.037-2.203 2.203-2.037 2.037 2.203-2.203 2.038zm35.422.018l-2.202-2.036 2.036-2.204 2.204 2.036-2.038 2.204zm-39.828 4.053l-2.037-2.203 2.203-2.035 2.037 2.203-2.203 2.035zm44.218 0l-2.185-2.017 2.036-2.203 2.184 2.017-2.036 2.203z"></path>
                                     </g>
-                                </svg>
+                                </svg> */}
                             </Box>
                         </Grid>
                         <Grid item md={6} xs={12}>
@@ -62,7 +68,9 @@ const About = () => {
                                     Create Automated Trading Strategies Running 24/7
                                 </Typography> */}
                                 <Typography variant='h6' textAlign={'center'} gutterBottom fontWeight={'400'}>
-                                    This versatile tool serves as an invaluable asset in your trading arsenal, equipping you with comprehensive and up-to-the-minute insights. It empowers you to make informed decisions swiftly, seizing profitable windows in the ever-volatile cryptocurrency market. By presenting the price of a particular coin on two distinct exchanges side by side, our software instantly reveals any disparities in pricing. This real-time data is crucial in identifying arbitrage opportunities that arise when these prices diverge, enabling you to execute rapid transactions to your advantage.                            </Typography>
+                                    We are thrilled to introduce a revolutionary cryptocurrency arbitrage software, designed to cater to both beginners and experts alike. This advanced tool enables real-time monitoring of arbitrage opportunities across more than 10 leading crypto exchanges, including Binance, Kraken, MXC, and KuCoin.                    </Typography>
+                                {/* <Typography variant='h6' textAlign={'center'} gutterBottom fontWeight={'400'}>
+                                    This versatile tool serves as an invaluable asset in your trading arsenal, equipping you with comprehensive and up-to-the-minute insights. It empowers you to make informed decisions swiftly, seizing profitable windows in the ever-volatile cryptocurrency market. By presenting the price of a particular coin on two distinct exchanges side by side, our software instantly reveals any disparities in pricing. This real-time data is crucial in identifying arbitrage opportunities that arise when these prices diverge, enabling you to execute rapid transactions to your advantage.                            </Typography> */}
                             </Box>
                         </Grid>
                     </Grid>
@@ -70,20 +78,23 @@ const About = () => {
             </Box>
             <Box sx={{ paddingY: { md: '6rem', sm: '3rem', xs: '2rem' }, background: '#F2F2F2' }} position={'relative'}>
                 <Container maxWidth="lg">
-                    <Grid container spacing={2} alignItems={'center'}>
+                    <Grid container spacing={1} alignItems={'center'}>
                         <Grid item md={6} xs={12}>
                             <Box>
                                 {/* <Typography variant='h4' gutterBottom fontWeight={'500'}>
                                     Trade Across Exchanges
                                 </Typography> */}
-                                <Typography variant='h6' textAlign={'justify'} gutterBottom fontWeight={'400'}>
-                                    Moreover, the software goes beyond price differentials. It also provides you with an in-depth analysis of trading volume on both exchanges. This information is invaluable as it offers a clear understanding of market activity and liquidity, essential factors that contribute to the feasibility of arbitrage trades. However, the pièce de résistance of our software is the presentation of the percentage difference between the prices on the two exchanges. This metric acts as a reliable gauge to swiftly assess the potential profitability of an arbitrage trade.                                </Typography>
+                                <Typography variant='h6' textAlign={'left'} gutterBottom fontWeight={'400'}>
+                                    Arbitrage Crypto Pro is a versatile asset in your trading arsenal, providing comprehensive insights and empowering quick decision-making. It is designed to help you swiftly identify price disparities between two different exchanges. This real-time data is critical for identifying arbitrage opportunities that occur when prices diverge, allowing for rapid transactions in your favor.                       </Typography>
+                                {/* <Typography variant='h6' textAlign={'justify'} gutterBottom fontWeight={'400'}>
+                                    Moreover, the software goes beyond price differentials. It also provides you with an in-depth analysis of trading volume on both exchanges. This information is invaluable as it offers a clear understanding of market activity and liquidity, essential factors that contribute to the feasibility of arbitrage trades. However, the pièce de résistance of our software is the presentation of the percentage difference between the prices on the two exchanges. This metric acts as a reliable gauge to swiftly assess the potential profitability of an arbitrage trade.                                </Typography> */}
 
                             </Box>
                         </Grid>
                         <Grid item md={6} xs={12}>
-                            <Box sx={{ width: { md: '50%' } }} margin={'auto'}>
-                                <svg class="index-trade__icon" xmlns="https://www.w3.org/2000/svg" viewBox="0 0 256 265">
+                            <Box sx={{ width: { md: '70%' } }} margin={'auto'}>
+                                <img src={profileweek2} width='100%' alt='profile2' />
+                                {/* <svg class="index-trade__icon" xmlns="https://www.w3.org/2000/svg" viewBox="0 0 256 265">
                                     <g fill="none" fill-rule="evenodd">
                                         <path fill="#F58E6F" d="M205.502 233.608c0 5.693-4.626 10.307-10.332 10.307-5.705 0-10.33-4.614-10.33-10.307 0-5.693 4.625-10.309 10.33-10.309 5.706 0 10.332 4.616 10.332 10.309"></path>
                                         <path fill="#70CCDF" d="M57.549 51.821a7.143 7.143 0 0 1-10.083 0 7.102 7.102 0 0 1 0-10.06 7.142 7.142 0 0 1 10.083.001 7.102 7.102 0 0 1 0 10.06"></path>
@@ -104,7 +115,7 @@ const About = () => {
                                         <path fill="#4A545F" fill-rule="nonzero" d="M119.279 139h1.941v2h-1.941zM123.162 139h1.941v2h-1.941zM127.044 139h1.941v2h-1.941zM130.926 139h1.941v2h-1.941zM134.809 139h1.941v2h-1.941zM150 132h-43v-4.23l1.564-1.54h30.686v-6.73c0-5.865-4.789-10.577-10.75-10.577s-10.75 4.712-10.75 10.577v4.808h-1.955V119.5c0-6.923 5.669-12.5 12.705-12.5 7.036 0 12.705 5.577 12.705 12.5v8.654h-31.86l-.39.384v1.539h39.09v-1.539l-.39-.384h-4.496v-1.923h5.277l1.564 1.538V132z"></path>
                                         <path fill="#4A545F" fill-rule="nonzero" d="M122 127h-2v-7.53c0-4.705 4-8.47 9-8.47s9 3.765 9 8.47v4.706h-2v-4.705c0-3.671-3.1-6.589-7-6.589s-7 2.918-7 6.589V127zm26.436 27h-39.872L107 152.4V148h43v4.4l-1.564 1.6zm-39.09-2h38.309l.39-.4V150h-39.09v1.6l.39.4z"></path>
                                     </g>
-                                </svg>
+                                </svg> */}
                             </Box>
                         </Grid>
                     </Grid>
@@ -112,10 +123,11 @@ const About = () => {
             </Box>
             <Box sx={{ paddingY: { md: '6rem', sm: '3rem', xs: '2rem' } }} position={'relative'}>
                 <Container maxWidth="lg">
-                    <Grid container spacing={2} alignItems={'center'}>
+                    <Grid container spacing={1} alignItems={'center'}>
                         <Grid item md={6} xs={12}>
                             <Box sx={{ width: { md: '70%' } }} >
-                                <svg class="index-trade__icon" xmlns="https://www.w3.org/2000/svg" viewBox="0 0 323 231">
+                                <img src={profileweek4} width='100%' alt='profile4' />
+                                {/* <svg class="index-trade__icon" xmlns="https://www.w3.org/2000/svg" viewBox="0 0 323 231">
                                     <g fill="none" fill-rule="evenodd">
                                         <path fill="#4A545F" d="M95.144 5.518h3V-.001h-3zM95.144 20.723h3v-5.519h-3zM101.486 11.861h5.519v-3h-5.519zM86.282 11.862h5.519v-3h-5.519zM286.449 133.046h3v-5.519h-3zM286.449 148.25h3v-5.519h-3zM292.792 139.39v-3l5.519-.001v3zM277.587 139.39h5.519v-3h-5.519z"></path>
                                         <path fill="#F58E6F" d="M34.835 178.82a3.99 3.99 0 1 1-7.98 0 3.99 3.99 0 0 1 7.98 0"></path>
@@ -132,7 +144,7 @@ const About = () => {
                                         <path fill="#F58E6F" d="M228.002 118.301v11.583l-12.427-5.714 6.107-2.883zM242.161 124.17l-12.426 5.714v-11.583l6.321 2.986z"></path>
                                         <path fill="#4A545F" d="M80.936 230.359h3v-3h-3v3zm6 0h3v-3h-3v3zm6 0h3v-3h-3v3zm6 0h3v-3h-3v3zm6 0h3v-3h-3v3zm6 0h3v-3h-3v3zm6 0h3v-3h-3v3zm6 0h3v-3h-3v3zm6 0h3v-3h-3v3zm6 0h3v-3h-3v3zm6 0h3v-3h-3v3zm6 0h3v-3h-3v3zm6 0h3v-3h-3v3zm6 0h3v-3h-3v3zm6 0h3v-3h-3v3zm6 0h3v-3h-3v3zm6 0h3v-3h-3v3zm6 0h3v-3h-3v3zm6 0h3v-3h-3v3zm6 0h3v-3h-3v3zm6 0h3v-3h-3v3zm6 0h3v-3h-3v3zm6 0h3v-3h-3v3zm6 0h3v-3h-3v3zm6 0h3v-3h-3v3zm6 0h3v-3h-3v3zm6 0h3v-3h-3v3zm6 0h3v-3h-3v3zm6 0h3v-3h-3v3zm6 0h3v-3h-3v3zm6 0h3v-3h-3v3zm6 0h2.612v-3h-2.612v3zM49.427 19.672h3v-2.613h-3v2.613zm0 6h3v-3h-3v3zm0 6h3v-3h-3v3zm0 6h3v-3h-3v3zm0 6h3v-3h-3v3zm0 6h3v-3h-3v3zm0 6h3v-3h-3v3zm0 6h3v-3h-3v3zm0 6h3v-3h-3v3zm0 6h3v-3h-3v3zm0 6h3v-3h-3v3zm0 6h3v-3h-3v3zm0 6h3v-3h-3v3zm0 6h3v-3h-3v3zm0 6h3v-3h-3v3zm0 6h3v-3h-3v3zm0 6h3v-3h-3v3zm0 6h3v-3h-3v3zm0 6h3v-3h-3v3zm0 6h3v-3h-3v3zm0 6h3v-3h-3v3zm0 6h3v-3h-3v3zm0 6h3v-3h-3v3zm0 6h3v-3h-3v3zm0 6h3v-3h-3v3zm0 6h3v-3h-3v3zm0 6h3v-3h-3v3zm0 6h3v-3h-3v3zm0 6h3v-3h-3v3zm0 6h3v-3h-3v3zm0 6h3v-3h-3v3zm0 6h3v-3h-3v3zm209.97-180.403l-.094-.085-.074.066-.943-1.008.007-.007-1.099-1.188 2.11-1.95 2.13 1.97-2.038 2.203zm-4.575 4.054l-2.035-2.204 2.203-2.035 2.036 2.204-2.204 2.035zm8.981.017l-2.202-2.035 2.036-2.203 2.204 2.035-2.038 2.203zm-13.387 4.055l-2.036-2.204 2.203-2.035 2.036 2.203-2.203 2.035zm17.796.018l-2.204-2.035 2.035-2.206 2.204 2.036-2.036 2.206zm-22.203 4.053l-2.035-2.203 2.203-2.035 2.035 2.203-2.203 2.035zm26.609.018l-2.204-2.035 2.038-2.203 2.202 2.035-2.036 2.203zm-31.016 4.054l-2.037-2.203 2.203-2.037 2.037 2.203-2.203 2.038zm35.422.018l-2.202-2.036 2.036-2.204 2.204 2.036-2.038 2.204zm-39.828 4.053l-2.037-2.203 2.203-2.035 2.037 2.203-2.203 2.035zm44.218 0l-2.185-2.017 2.036-2.203 2.184 2.017-2.036 2.203z"></path>
                                     </g>
-                                </svg>
+                                </svg> */}
                             </Box>
                         </Grid>
                         <Grid item md={6} xs={12}>
@@ -140,8 +152,10 @@ const About = () => {
                                 <Typography variant='h4' gutterBottom fontWeight={'500'}>
                                     We present to you Arbitrage crypto pro software
                                 </Typography>
-                                <Typography variant='h6' textAlign={'justify'} gutterBottom fontWeight={'400'}>
-                                    Manual tracking of cryptocurrency arbitrage opportunities is a task fraught with challenges and limitations. Our software effectively eliminates these hurdles, positioning itself as a remarkable tool that could redefine the trading landscape. It has the potential to become a revenue generator, offering you a competitive edge in a rapidly evolving market.                                </Typography>
+                                {/* <Typography variant='h6' textAlign={'justify'} gutterBottom fontWeight={'400'}>
+                                    Manual tracking of cryptocurrency arbitrage opportunities is a task fraught with challenges and limitations. Our software effectively eliminates these hurdles, positioning itself as a remarkable tool that could redefine the trading landscape. It has the potential to become a revenue generator, offering you a competitive edge in a rapidly evolving market.                                </Typography> */}
+                                <Typography variant='h6' textAlign={'left'} gutterBottom fontWeight={'400'}>
+                                    But that's not all. Our software goes beyond price differentials. It offers in-depth analysis of trading volume on both exchanges, providing a clear understanding of market activity and liquidity, which are key factors for successful arbitrage trades. However, the true power of our software lies in presenting the percentage differences between prices on the two exchanges. This metric serves as a reliable indicator for quickly assessing the potential profitability of arbitrage trades.                           </Typography>
 
                             </Box>
                         </Grid>
@@ -151,20 +165,24 @@ const About = () => {
             </Box>
             <Box sx={{ paddingY: { md: '6rem', sm: '3rem', xs: '2rem' }, background: '#F2F2F2' }} position={'relative'}>
                 <Container maxWidth="lg">
-                    <Grid container spacing={2} alignItems={'center'}>
+                    <Grid container spacing={1} alignItems={'center'}>
                         <Grid item md={6} xs={12}>
                             <Box>
                                 {/* <Typography variant='h4' gutterBottom fontWeight={'500'}>
                                     Trade Across Exchanges
                                 </Typography> */}
-                                <Typography textAlign={'justify'} variant='h6' gutterBottom fontWeight={'400'}>
-                                    Example Scenario: Imagine working 8 hours daily, conducting 3 transactions per hour with an initial investment of $1000. This could result in daily earnings of $960 and a monthly total of $28,800, all with a $1000 investment.
+                                <Typography textAlign={'left'} variant='h6' gutterBottom fontWeight={'400'}>
+                                    In essence, Arbitrage Crypto Pro software streamlines the process of recognizing and capitalizing on arbitrage opportunities, eliminating the challenges and limitations of manual tracking. It has the potential to reshape the crypto market and become a source of income, offering you a substantial competitive advantage in the ever-changing world of cryptocurrencies.
                                 </Typography>
+                                {/* <Typography textAlign={'justify'} variant='h6' gutterBottom fontWeight={'400'}>
+                                    Example Scenario: Imagine working 8 hours daily, conducting 3 transactions per hour with an initial investment of $1000. This could result in daily earnings of $960 and a monthly total of $28,800, all with a $1000 investment.
+                                </Typography> */}
                             </Box>
                         </Grid>
                         <Grid item md={6} xs={12}>
-                            <Box sx={{ width: { md: '50%' } }} margin={'auto'}>
-                                <svg class="index-trade__icon" xmlns="https://www.w3.org/2000/svg" viewBox="0 0 256 265">
+                            <Box sx={{ width: { md: '70%' } }} margin={'auto'}>
+                                <img src={profileweek3} width='100%' alt='profile3' />
+                                {/* <svg class="index-trade__icon" xmlns="https://www.w3.org/2000/svg" viewBox="0 0 256 265">
                                     <g fill="none" fill-rule="evenodd">
                                         <path fill="#F58E6F" d="M205.502 233.608c0 5.693-4.626 10.307-10.332 10.307-5.705 0-10.33-4.614-10.33-10.307 0-5.693 4.625-10.309 10.33-10.309 5.706 0 10.332 4.616 10.332 10.309"></path>
                                         <path fill="#70CCDF" d="M57.549 51.821a7.143 7.143 0 0 1-10.083 0 7.102 7.102 0 0 1 0-10.06 7.142 7.142 0 0 1 10.083.001 7.102 7.102 0 0 1 0 10.06"></path>
@@ -185,13 +203,13 @@ const About = () => {
                                         <path fill="#4A545F" fill-rule="nonzero" d="M119.279 139h1.941v2h-1.941zM123.162 139h1.941v2h-1.941zM127.044 139h1.941v2h-1.941zM130.926 139h1.941v2h-1.941zM134.809 139h1.941v2h-1.941zM150 132h-43v-4.23l1.564-1.54h30.686v-6.73c0-5.865-4.789-10.577-10.75-10.577s-10.75 4.712-10.75 10.577v4.808h-1.955V119.5c0-6.923 5.669-12.5 12.705-12.5 7.036 0 12.705 5.577 12.705 12.5v8.654h-31.86l-.39.384v1.539h39.09v-1.539l-.39-.384h-4.496v-1.923h5.277l1.564 1.538V132z"></path>
                                         <path fill="#4A545F" fill-rule="nonzero" d="M122 127h-2v-7.53c0-4.705 4-8.47 9-8.47s9 3.765 9 8.47v4.706h-2v-4.705c0-3.671-3.1-6.589-7-6.589s-7 2.918-7 6.589V127zm26.436 27h-39.872L107 152.4V148h43v4.4l-1.564 1.6zm-39.09-2h38.309l.39-.4V150h-39.09v1.6l.39.4z"></path>
                                     </g>
-                                </svg>
+                                </svg> */}
                             </Box>
                         </Grid>
                     </Grid>
                 </Container>
             </Box>
-            <TermsServiceAbout />
+            {/* <TermsServiceAbout /> */}
         </div>
     )
 }
