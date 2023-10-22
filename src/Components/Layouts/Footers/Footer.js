@@ -223,7 +223,7 @@ const Footer = ({ router }) => {
                                         </Link>
                                     </Menuitems>
                                     <Menuitems>
-                                        <Link to='/termsofServices' target='_blank' style={{ textDecoration: 'none' }}>
+                                        <Link to='/contactUs' target='_blank' style={{ textDecoration: 'none' }}>
                                             <Itemsl>
                                             Contact Us
                                             </Itemsl>

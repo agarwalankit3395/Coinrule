@@ -16,7 +16,7 @@ import About from './Components/View/abouts/About';
 import { Web3ContextProvider } from './Components/utils/WalletContext';
 import Aboutus from './Components/View/aboutUs/Aboutus';
 import Serviceterms from './Components/View/termofServices/Serviceterms';
-
+import UsContact from './Components/View/Contactus/usContact';
 const Wrapper = styled.div`  
   color: ${({ theme }) => theme.text}; 
 `
@@ -40,6 +40,7 @@ const App = (props) => {
               <Route path='/faq' element={<FAQ />} />
               <Route path='/aboutus' element={<Aboutus />} />
               <Route path='/termsofServices' element={<Serviceterms />} />
+              <Route path='/contactUs' element={<UsContact />} />
             </Routes>
           </Wrapper>
 

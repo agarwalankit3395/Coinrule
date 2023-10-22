@@ -19,6 +19,7 @@ import useWeb3 from "../../utils/useWeb3";
 import Stack from "@mui/material/Stack";
 import Snackbar from "@mui/material/Snackbar";
 import { useNavigate } from "react-router-dom";
+import { ethers } from "ethers";
 
 const oneMonthPackage = [
   "Efficient Crypto Arbitrage Opportunities",
@@ -47,13 +48,12 @@ const oneYearPackage = [
 
 const PricingCorrily = () => {
   const [info, setInfo] = useState(0);
-  const [allowancePrice, setAllowancePrice] = useState(0);
   const { walletAddress, setWalletAddress } = useWeb3();
   const [metamaskconnected, setMetaMaskConnected] = useState(false);
   const [subscriptionAlert, setSubscriptionAlert] = useState(false);
-  const [allowanceAlert, setAllowanceAlert] = useState(false);
-  const [usdtBalanceAlert, setUSdtBalanceAlert] = useState(false);
+  const [errorAlert, setErrorAlert] = useState(false);
   const [open, setOpen] = React.useState(false);
+  const [errorMessage, setErrorMessage] = useState("");
 
   const navigate = useNavigate();
 
@@ -66,21 +66,6 @@ const PricingCorrily = () => {
     }
     main();
   }, [walletAddress]);
-
-  useEffect(() => {
-    async function checkAllowance() {
-      if (window.ethereum && walletAddress !== null) {
-        const checkAllowance = await info?.usdt_token.allowance(
-          walletAddress.toString(),
-          Smart_Contract_Address
-        );
-        const check = checkAllowance.toString();
-        console.log(Number(check));
-        setAllowancePrice(Number(check));
-      }
-    }
-    checkAllowance();
-  }, [info, allowancePrice, walletAddress]);
 
   const handleWalletConnect = async () => {
     try {
@@ -155,82 +140,47 @@ const PricingCorrily = () => {
 
   const handleOneMonthPackage = async () => {
     try {
-      const checkAllowance = await info?.usdt_token.allowance(
-        walletAddress.toString(),
-        Smart_Contract_Address
-      );
-      console.log(checkAllowance.toString());
 
       const monthlyPrice = await info?.arbi_bot.MonthSubscribyionFee();
+      const convertedValue =( monthlyPrice/10**18).toString()
+      console.log(convertedValue, "Price check")
       console.log(monthlyPrice.toString());
-      // const pricecheck = ethers.utils.parseUnits(monthlyPrice, "gwei");
-      const Monthprice = monthlyPrice.toString();
-      const yearPrice = await info?.arbi_bot.YearSubscribyionFee();
-      if (checkAllowance.toString() < Monthprice) {
-        const res = await info?.usdt_token.increaseAllowance(
-          Smart_Contract_Address,
-          yearPrice.toString()
-        );
-        console.log(res);
-        await res.wait();
-        handleAllowanceAlert();
-      }
-      const checkUserUSDTbalance = await info?.usdt_token.balanceOf(
-        walletAddress.toString()
-      );
-      console.log(checkUserUSDTbalance.toString());
-      if (checkUserUSDTbalance.toString() < monthlyPrice.toString()) {
-        handleUSDTBalance();
-        return;
-      }
-      const result = await info?.arbi_bot.Subscription("1");
+      const result = await info?.arbi_bot.Subscription("1", { value: ethers.utils.parseUnits(convertedValue,"ether")});
       console.log(result);
       await result.wait();
       handleSubscriptionOpenAlert();
-      navigate("/CryptoArbitrage", { replace: true });
+      navigate("/invest", { replace: true });
     } catch (error) {
       console.log(error);
+      if (error.message) {
+        setErrorMessage(error.message);
+        handleErrorAlert();
+      }
+      
+      if (error.reason) {
+      }
     }
   };
 
   const handleOneYearPackage = async () => {
-    const checkAllowance = await info.usdt_token.allowance(
-      walletAddress.toString(),
-      Smart_Contract_Address
-    );
-    console.log(checkAllowance.toString());
+    try {
 
-    const yearPrice = await info.arbi_bot.YearSubscribyionFee();
-    console.log(yearPrice.toString());
-    if (checkAllowance.toString() < yearPrice.toString()) {
-      const res = await info.usdt_token.increaseAllowance(
-        Smart_Contract_Address,
-        yearPrice.toString()
-      );
-      console.log(res);
-      await res.wait();
-
-      handleAllowanceAlert();
+      const yearPrice = await info.arbi_bot.YearSubscribyionFee();
+      console.log(yearPrice.toString());
+      const convertedValue =( yearPrice/10**18).toString()
+      console.log(convertedValue, "Price check")
+  
+      const result = await info.arbi_bot.Subscription("2", { value: ethers.utils.parseUnits(convertedValue,"ether")});
+      await result.wait();
+      handleSubscriptionOpenAlert();
+      navigate("/invest", { replace: true });
+    } catch (error) {
+      setErrorMessage(error.reason);
+      handleErrorAlert();
+      console.log(error)
     }
-    const checkUserUSDTbalance = await info?.usdt_token.balanceOf(
-      walletAddress.toString()
-    );
-    console.log(checkUserUSDTbalance.toString());
-    if (checkUserUSDTbalance.toString() < yearPrice.toString()) {
-      handleUSDTBalance();
-      return;
-    }
-    const result = await info.arbi_bot.Subscription("2");
-    await result.wait();
-    handleSubscriptionOpenAlert();
-    navigate("/invest", { replace: true });
-  };
 
-  const handleUnsubscribe = async () => {
-    const res = await info.arbi_bot.UnSubscription();
-    console.log(res);
-  };
-
+}
   const handleMetaMaskConnection = async () => {
     setMetaMaskConnected(true);
   };
@@ -254,26 +204,15 @@ const PricingCorrily = () => {
     setSubscriptionAlert(false);
   };
 
-  const handleAllowanceAlert = async () => {
-    setAllowanceAlert(true);
+  const handleErrorAlert = async () => {
+    setErrorAlert(true);
   };
 
-  const handleAllowanceCloseAlert = async (event, reason) => {
+  const handleErrorCloseAlert = async (event, reason) => {
     if (reason === "clickaway") {
       return;
     }
-    setAllowanceAlert(false);
-  };
-
-  const handleUSDTBalance = async () => {
-    setUSdtBalanceAlert(true);
-  };
-
-  const handleUSDTCloseBalance = async (event, reason) => {
-    if (reason === "clickaway") {
-      return;
-    }
-    setUSdtBalanceAlert(false);
+    setErrorAlert(false);
   };
 
   const handleClick = () => {
@@ -357,24 +296,9 @@ const PricingCorrily = () => {
                         width:'100%'
                       }}
                     >
-                      {allowancePrice > 0 ? "Subscribe" : "Allowance"}
+                       Subscribe
                     </Button>
                   )}
-                  {/* <Button
-                    onClick={handleUnsubscribe}
-                    endIcon={<AddOutlinedIcon sx={{ color: "#fff" }} />}
-                    variant="contained"
-                    sx={{
-                      boxShadow: "none",
-                      fontSize: "20px",
-                      borderRadius: "50px",
-                      paddingX: "2rem",
-                      color: "#fff",
-                      textTransform: "capitalize"
-                    }}
-                  >
-                    unsubscribe
-                  </Button> */}
                 </Box>
               </Box>
             </Box>
@@ -444,25 +368,9 @@ const PricingCorrily = () => {
                         width:'100%'
                       }}
                     >
-                      {allowancePrice > 0 ? "Subscribe" : "Allowance"}
+                      Subscribe
                     </Button>
                   )}
-
-                  {/* <Button
-                    onClick={handleUnsubscribe}
-                    endIcon={<AddOutlinedIcon sx={{ color: "#fff" }} />}
-                    variant="contained"
-                    sx={{
-                      boxShadow: "none",
-                      fontSize: "20px",
-                      borderRadius: "50px",
-                      paddingX: "2rem",
-                      color: "#fff",
-                      textTransform: "capitalize"
-                    }}
-                  >
-                    unsubscribe
-                  </Button> */}
                 </Box>
               </Box>
             </Box>
@@ -487,10 +395,10 @@ const PricingCorrily = () => {
       </Stack>
       <Stack spacing={2} sx={{ width: "100%" }}>
         <Snackbar
-          open={allowanceAlert}
-          autoHideDuration={2000}
-          onClose={handleAllowanceCloseAlert}
-          message="Allowance has been provided!"
+          open={errorAlert}
+          autoHideDuration={5000}
+          onClose={handleErrorCloseAlert}
+          message={errorMessage}
         ></Snackbar>
       </Stack>
       <Stack spacing={2} sx={{ width: "100%" }}>
@@ -499,14 +407,6 @@ const PricingCorrily = () => {
           autoHideDuration={2000}
           onClose={handleClose}
           message="Please Install MetaMask!"
-        ></Snackbar>
-      </Stack>
-      <Stack spacing={2} sx={{ width: "100%" }}>
-        <Snackbar
-          open={usdtBalanceAlert}
-          autoHideDuration={2000}
-          onClose={handleUSDTCloseBalance}
-          message="USDT Balance is Low"
         ></Snackbar>
       </Stack>
     </Box>
