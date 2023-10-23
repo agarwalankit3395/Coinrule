@@ -11,7 +11,6 @@ const ContactUs = () => {
                         <Grid item md={6} xs={12}>
                             <Box sx={{ width: { md: '90%' } }} >
                                 <img src={logo} width='100%' alt='profile1' />
-                               
                             </Box>
                         </Grid>
                         <Grid item md={6} xs={12}>

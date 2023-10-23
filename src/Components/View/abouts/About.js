@@ -68,7 +68,7 @@ const About = () => {
                                 {/* <Typography variant='h4' gutterBottom fontWeight={'500'}>
                                     Create Automated Trading Strategies Running 24/7
                                 </Typography> */}
-                                <Typography variant='h6' textAlign={'center'} gutterBottom fontWeight={'400'}>
+                                <Typography variant='h6' textAlign={'left'} gutterBottom fontWeight={'400'}>
                                     We are thrilled to introduce a revolutionary cryptocurrency arbitrage software, designed to cater to both beginners and experts alike. This advanced tool enables real-time monitoring of arbitrage opportunities across more than 10 leading crypto exchanges, including Binance, Kraken, MXC, and KuCoin.                    </Typography>
                                 {/* <Typography variant='h6' textAlign={'center'} gutterBottom fontWeight={'400'}>
                                     This versatile tool serves as an invaluable asset in your trading arsenal, equipping you with comprehensive and up-to-the-minute insights. It empowers you to make informed decisions swiftly, seizing profitable windows in the ever-volatile cryptocurrency market. By presenting the price of a particular coin on two distinct exchanges side by side, our software instantly reveals any disparities in pricing. This real-time data is crucial in identifying arbitrage opportunities that arise when these prices diverge, enabling you to execute rapid transactions to your advantage.                            </Typography> */}
