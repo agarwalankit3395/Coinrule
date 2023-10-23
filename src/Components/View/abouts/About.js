@@ -1,12 +1,9 @@
-import { Box, Button, Container, Grid, Typography } from '@mui/material';
+import { Box, Container, Grid, Typography } from '@mui/material';
 import React from 'react'
-import teamimg from '../../../assets/teamPhoto.jpg'
-import TermsServiceAbout from '../MainPage/TermsServiceAbout';
+
 
 import macbook from '../../../assets/homePageImg/macbook.png';
-import profileweek1 from '../../../assets/homePageImg/ProfitWeek-1.png';
 import profileweek2 from '../../../assets/homePageImg/ProfitWeek-2.png';
-import profileweek3 from '../../../assets/homePageImg/ProfitWeek-3.png';
 import profileweek4 from '../../../assets/homePageImg/ProfitWeek-4.png';
 import profileweek5 from '../../../assets/homePageImg/ProfitWeek-1.2.png';
 import profileweek6 from '../../../assets/homePageImg/ProfitWeek-3.2.png'

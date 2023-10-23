@@ -10,11 +10,9 @@ import {
 } from "@mui/material";
 import React from "react";
 import DoneIcon from "@mui/icons-material/Done";
-import AddOutlinedIcon from "@mui/icons-material/AddOutlined";
 import { get_info } from "../../utils/SmartContract";
 import { useEffect } from "react";
 import { useState } from "react";
-import { Smart_Contract_Address } from "../../utils/SmartContract";
 import useWeb3 from "../../utils/useWeb3";
 import Stack from "@mui/material/Stack";
 import Snackbar from "@mui/material/Snackbar";
@@ -158,6 +156,8 @@ const PricingCorrily = () => {
       }
       
       if (error.reason) {
+        setErrorMessage(error.reason);
+        handleErrorAlert();
       }
     }
   };
@@ -175,9 +175,15 @@ const PricingCorrily = () => {
       handleSubscriptionOpenAlert();
       navigate("/invest", { replace: true });
     } catch (error) {
-      setErrorMessage(error.reason);
-      handleErrorAlert();
-      console.log(error)
+      if (error.message) {
+        setErrorMessage(error.message);
+        handleErrorAlert();
+      }
+      
+      if (error.reason) {
+        setErrorMessage(error.reason);
+        handleErrorAlert();
+      }
     }
 
 }

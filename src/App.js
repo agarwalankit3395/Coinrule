@@ -1,11 +1,11 @@
-import React, { useState } from 'react'
+import React from 'react'
 import {
   BrowserRouter,
   Routes,
   Route,
 } from "react-router-dom";
 import styled, { ThemeProvider } from 'styled-components';
-import { darkTheme, lightTheme } from './Components/utils/Theme';
+import { lightTheme } from './Components/utils/Theme';
 import HeaderBar from './Components/Layouts/Headers/HeaderBar'
 import Index from './Components/View/MainPage/Index';
 import FAQ from './Components/View/FAQs/FAQ';
@@ -16,13 +16,13 @@ import About from './Components/View/abouts/About';
 import { Web3ContextProvider } from './Components/utils/WalletContext';
 import Aboutus from './Components/View/aboutUs/Aboutus';
 import Serviceterms from './Components/View/termofServices/Serviceterms';
-import UsContact from './Components/View/Contactus/usContact';
+import ContactUs from './Components/View/MainPage/ContactUs';
+
 const Wrapper = styled.div`  
   color: ${({ theme }) => theme.text}; 
 `
 
 const App = (props) => {
-  const [darkMode, setDarkMode] = useState(false);
 
   return (
     <ThemeProvider theme={lightTheme}>
@@ -40,7 +40,7 @@ const App = (props) => {
               <Route path='/faq' element={<FAQ />} />
               <Route path='/aboutus' element={<Aboutus />} />
               <Route path='/termsofServices' element={<Serviceterms />} />
-              <Route path='/contactUs' element={<UsContact />} />
+              <Route path='/contactUs' element={<ContactUs />} />
             </Routes>
           </Wrapper>
 

@@ -5,7 +5,7 @@ import { Box, Container, Typography } from '@mui/material';
 const Aboutus = () => {
     return (
         <>
-            <Box className='herosbg' >
+            <Box className='herosbg'>
             <Box sx={{ paddingY: { md: '5rem', xs: '3rem' }, position: 'relative' }}>
                 <Container maxWidth='lg'>
                     <Box paddingBottom={'2rem'}>
