@@ -13,14 +13,14 @@ const About = () => {
         <div>
             <Box className='herosbg'>
                 <Box sx={{ paddingY: { md: '6rem', xs: '3rem' }, position: 'relative' }}>
-                    <Container maxWidth='lg' sx={{ marginTop: '3rem' }} >
+                    <Container maxWidth='lg' sx={{ marginTop: '6rem' }} >
                         <Grid container spacing={1} alignItems={'center'}>
                             <Grid item md={6} xs={12}>
                                 <Box position='relative' >
                                     {/* <Typography variant='h3' color={"#fff"} fontWeight='500' gutterBottom component='h3'>
                                         An A-Team of Crypto Enthusiasts That Love Bot Trading
                                     </Typography> */}
-                                    <Typography variant='h2' textAlign={'center'} color={"#fff"} fontWeight='500' gutterBottom component='h2' paddingY={'1rem'} marginBottom="12rem">
+                                    <Typography variant='h3' textAlign={'center'} color={"#fff"} fontWeight='500' gutterBottom component='h3' paddingY={'1rem'} marginBottom="12rem">
                                     We present to you Crypto arbitrage pro
                                     </Typography>
                                     {/* <Typography variant='h5' textAlign={'left'} color={"#fff"} fontWeight='300' gutterBottom component='h5' paddingY={'1rem'}>
