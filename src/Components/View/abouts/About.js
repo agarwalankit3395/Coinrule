@@ -20,7 +20,7 @@ const About = () => {
                                     {/* <Typography variant='h3' color={"#fff"} fontWeight='500' gutterBottom component='h3'>
                                         An A-Team of Crypto Enthusiasts That Love Bot Trading
                                     </Typography> */}
-                                    <Typography variant='h2' textAlign={'center'} color={"#fff"} fontWeight='500' gutterBottom component='h2' paddingY={'1rem'}>
+                                    <Typography variant='h2' textAlign={'center'} color={"#fff"} fontWeight='500' gutterBottom component='h2' paddingY={'1rem'} marginBottom="12rem">
                                     We present to you Crypto arbitrage pro
                                     </Typography>
                                     {/* <Typography variant='h5' textAlign={'left'} color={"#fff"} fontWeight='300' gutterBottom component='h5' paddingY={'1rem'}>
