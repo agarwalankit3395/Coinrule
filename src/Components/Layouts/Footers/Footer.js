@@ -84,114 +84,16 @@ const Footer = ({ router }) => {
     <div>
       <Divider sx={{ borderColor: "#ccc" }} />
       <Collecboxs className="collBoxPadd">
-        <Container maxWidth="xl">
-          {/* <Grid container spacing={1}>
-                        <Grid item lg={5} md={3} sm={12} xs={12}>
-                            <Box>
-                                <Box paddingTop='10px'>
-                                    <img src={logo} width='150px' style={{ borderRadius: '12px' }} alt='' />
-                                </Box>
-                            </Box>
-                        </Grid>
-                        <Grid item lg={2} md={3} sm={4} xs={6}>
-                            <Box>
-                                <Hotext>
-                                    <Typography variant='h6' gutterBottom component='h3'>
-                                        PRODUCT
-                                    </Typography>
-                                </Hotext>
-                                <Box paddingTop='10px'>
-                                    <Menuitems>
-                                        <Link to='/' target='_blank' style={{ textDecoration: 'none' }}>
-                                            <Itemsl>
-                                                Crypto Arbitrage
-                                            </Itemsl>
-                                        </Link>
-                                    </Menuitems>
-                                    <Menuitems>
-                                        <Link to='/' target='_blank' style={{ textDecoration: 'none' }}>
-                                            <Itemsl>
-                                                About Us
-                                            </Itemsl>
-                                        </Link>
-                                    </Menuitems>
-                                </Box>
-                            </Box>
-                        </Grid>
-                        <Grid item lg={2} md={3} sm={4} xs={6}>
-                            <Box>
-                                <Hotext>
-                                    <Typography variant='h6' gutterBottom component='h3'>
-                                        COMPANY
-                                    </Typography>
-                                </Hotext>
-                                <Box paddingTop='10px'>
-                                    <Menuitems>
-                                        <Link to='/faq' style={{ textDecoration: 'none' }}>
-                                            <Itemsl>
-                                                Medium
-                                            </Itemsl>
-                                        </Link>
-                                    </Menuitems>
-                                    <Menuitems>
-                                        <Link to='/blog' style={{ textDecoration: 'none' }}>
-                                            <Itemsl>
-                                                Tradingview
-                                            </Itemsl>
-                                        </Link>
-                                    </Menuitems>
-                                    <Menuitems>
-                                        <Link to='/blog' style={{ textDecoration: 'none' }}>
-                                            <Itemsl>
-                                                Blog
-                                            </Itemsl>
-                                        </Link>
-                                    </Menuitems>
-
-                                </Box>
-                            </Box>
-                        </Grid>
-                        <Grid item lg={3} md={3} sm={12} xs={12}>
-                            <Box>
-                                <Hotext>
-                                    <Typography variant='h6' gutterBottom component='h3'>
-                                        Newsletter
-                                    </Typography>
-                                </Hotext>
-                                <Box>
-                                    <Menuitems>
-                                        <Itemsl>
-                                            Signup for our newsletter to get the latest news in your inbox.
-                                        </Itemsl>
-                                    </Menuitems>
-                                    <Menuitems>
-                                        <Box display='flex' alignItems='center' position='relative'>
-                                            <Inputbase type='email' placeholder='enter your email' />
-                                            <Submitbtn>
-                                                <ArrowForwardIcon fontSize='small' sx={{ color: '#fff' }} />
-                                            </Submitbtn>
-                                        </Box>
-                                    </Menuitems>
-                                    <Menuitems>
-                                        <Itemsl>
-                                            Your email is safe with us. We don't spam.
-                                        </Itemsl>
-                                    </Menuitems>
-                                </Box>
-                            </Box>
-                        </Grid>
-                    </Grid> */}
-          {/* <Hr /> */}
-          <Grid container spacing={1} marginTop="1rem">
-            <Grid item lg={4} md={4} sm={12} xs={12}>
+        <Container maxWidth="xl"> 
+          <Grid container spacing={1} marginTop="1rem" alignItems={"center"}>
+            <Grid item lg={4} md={12} sm={12} xs={12}>
               <Box
                 display="flex"
                 alignItems="center"
                 justifyContent="center"
                 flexWrap="wrap"
-                style={{
-                  gap: "20px",
-                  justifyContent: { xs: "center", md: "start" },
+                sx={{
+                  justifyContent: { xs: "center", md: "center", lg:'start' },
                 }}
               >
                 <Copys>
@@ -201,7 +103,7 @@ const Footer = ({ router }) => {
                 </Copys>
               </Box>
             </Grid>
-            <Grid item lg={4} md={4} sm={12} xs={12}>
+            <Grid item lg={4} md={12} sm={12} xs={12}>
               {/* <Box> */}
 
               <Box
@@ -209,8 +111,8 @@ const Footer = ({ router }) => {
                 alignItems="center"
                 justifyContent="center"
                 sx={{
-                  gap: "22px",
-                  justifyContent: { xs: "center", md: "end" },
+                  gap: "13px",
+                  justifyContent: { xs: "center", md: "center", lg:'center' },
                 }}
               >
                 <Menuitems>
@@ -243,34 +145,23 @@ const Footer = ({ router }) => {
               </Box>
               {/* </Box> */}
             </Grid>
-            <Grid item lg={4} md={4} sm={12} xs={12}>
+            <Grid item lg={4} md={12} sm={12} xs={12}>
               <Box
                 display="flex"
                 alignItems="center"
                 justifyContent="end"
                 sx={{
                   gap: "10px",
-                  justifyContent: { xs: "center", md: "end" },
+                  justifyContent: { xs: "center", md: "center", lg:'end' },
                 }}
               >
-                {/* <Iconsmain>
-                                    <FacebookIcon fontSize='small' sx={{ color: '#fff' }} />
-                                </Iconsmain> */}
                 <Iconsmain>
                   <InstagramIcon fontSize="small" sx={{ color: "#fff" }} />
                 </Iconsmain>
-                {/* <Iconsmain>
-                                    <LinkedInIcon fontSize='small' sx={{ color: '#fff' }} />
-                                </Iconsmain> */}
                 <Iconsmain>
                   <TelegramIcon fontSize="small" sx={{ color: "#fff" }} />
                 </Iconsmain>
-                {/* <Iconsmain>
-                                    <TwitterIcon fontSize='small' sx={{ color: '#fff' }} />
-                                </Iconsmain>
-                                <Iconsmain>
-                                    <YouTubeIcon fontSize='small' sx={{ color: '#fff' }} />
-                                </Iconsmain> */}
+
               </Box>
             </Grid>
           </Grid>

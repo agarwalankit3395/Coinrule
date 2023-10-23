@@ -14,7 +14,7 @@ import LogoutIcon from '@mui/icons-material/Logout';
 const Connectbtn = styled.div`
   cursor: pointer;
   background: ${({ theme }) => theme.soft};
-  padding: 10px 13px;
+  padding: 10px 10px;
   border-radius: 5px;
   width: 100%;
   font-size: 16px;
@@ -151,11 +151,11 @@ const ConnectButton = () => {
     setWalletAddress(null);
     setConnected(true);
   };
- 
+
   return (
     <div>
       {walletAddress == null ? (
-        <Button variant="contained" onClick={handleConnectMetaMask} sx={{ paddingY: '13px', backgroundColor: '#e735c3 !important', boxShadow: 'none !important' }}>
+        <Button variant="contained" onClick={handleConnectMetaMask} sx={{ paddingY: '10px', paddingX:'10px', backgroundColor: '#10d0b4 !important', boxShadow: 'none !important' }}>
           Connect Wallet
         </Button>
       ) : (
@@ -166,10 +166,11 @@ const ConnectButton = () => {
         // </div>
         <Button variant="contained" onClick={handleDisconnectMetaMask}
           endIcon={<LogoutIcon sx={{ color: '#fff' }} />}
-          sx={{ paddingY: '13px', backgroundColor: '#e735c3 !important', boxShadow: 'none !important',
-        }}
+          sx={{
+            paddingY: '10px', paddingX:'10px', backgroundColor: '#e735c3 !important', boxShadow: 'none !important',
+          }}
         >
-        <Box className="walletAddress_length" >{walletAddress}</Box>
+          <Box className="walletAddress_length" >{walletAddress}</Box>
         </Button>
       )}
       <Stack spacing={2} sx={{ width: "100%" }}>
