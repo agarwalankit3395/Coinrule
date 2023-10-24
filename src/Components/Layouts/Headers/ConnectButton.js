@@ -155,7 +155,7 @@ const ConnectButton = () => {
   return (
     <div>
       {walletAddress == null ? (
-        <Button variant="contained" onClick={handleConnectMetaMask} sx={{ paddingY: '10px', paddingX:'10px', backgroundColor: '#10d0b4 !important', boxShadow: 'none !important' }}>
+        <Button variant="contained" onClick={handleConnectMetaMask} sx={{ paddingY: '10px', paddingX:'10px', backgroundColor: '#03af96 !important', boxShadow: 'none !important' }}>
           Connect Wallet
         </Button>
       ) : (
@@ -167,7 +167,7 @@ const ConnectButton = () => {
         <Button variant="contained" onClick={handleDisconnectMetaMask}
           endIcon={<LogoutIcon sx={{ color: '#fff' }} />}
           sx={{
-            paddingY: '10px', paddingX:'10px', backgroundColor: '#e735c3 !important', boxShadow: 'none !important',
+            paddingY: '10px', paddingX:'10px', backgroundColor: '#03af96 !important', boxShadow: 'none !important',
           }}
         >
           <Box className="walletAddress_length" >{walletAddress}</Box>
