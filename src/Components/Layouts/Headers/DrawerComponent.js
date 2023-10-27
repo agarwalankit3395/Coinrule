@@ -20,16 +20,6 @@ const Pages = [
   } 
 ]
 
-// const Connectbtn = styled.div` 
-//     cursor: pointer; 
-//     background: ${({ theme }) => theme.bgBtns};
-//     padding: 10px 20px;
-//     border-radius: 5px;
-//     font-size: 16px;
-//     font-weight: 700;
-//     color: #fff;
-// `
-
 const DrawerComponent = () => {
 
   const [openDrawer, setOpenDrawer] = useState(false);
@@ -55,9 +45,6 @@ const DrawerComponent = () => {
           }
 
         </List>
-        {/*<Box sx={{ margin: '10px' }} >
-          <ConnectButton />
-        </Box>*/}
       </Drawer>
       <Box marginLeft='auto'>
         <IconButton onClick={() => setOpenDrawer(!openDrawer)}>
