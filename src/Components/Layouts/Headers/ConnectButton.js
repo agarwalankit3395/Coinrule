@@ -11,7 +11,7 @@ import Snackbar from "@mui/material/Snackbar";
 import { useState } from "react";
 import LogoutIcon from '@mui/icons-material/Logout';
 
-const Connectbtn = styled.div`
+ styled.div`
   cursor: pointer;
   background: ${({ theme }) => theme.soft};
   padding: 10px 10px;
@@ -36,7 +36,6 @@ const ConnectButton = () => {
   useEffect(() => {
     async function main() {
       if (walletAddress !== null) {
-        console.log(walletAddress);
         const account = await window.ethereum.request({
           method: "eth_requestAccounts"
         });
@@ -44,18 +43,15 @@ const ConnectButton = () => {
       }
     }
     main();
-  }, [walletAddress]);
+  }, [walletAddress, setWalletAddress]);
 
   const handleConnectMetaMask = async () => {
     try {
       const BNBchainId = "0x61";
       if (window.ethereum && walletAddress == null) {
-        console.log("Hello Metamask!");
         const currentChainId = await window.ethereum.request({
           method: "eth_chainId"
         });
-        console.log(currentChainId);
-        console.log(BNBchainId);
         if (BNBchainId === currentChainId) {
           const accounts = await window.ethereum
             .request({ method: "eth_requestAccounts" })
@@ -71,7 +67,6 @@ const ConnectButton = () => {
           const account = accounts[0];
           setWalletAddress(account);
           await get_info(window.ethereum, account);
-          console.log(account);
           handleMetaMaskConnection();
         } else {
           try {
@@ -159,11 +154,6 @@ const ConnectButton = () => {
           Connect Wallet
         </Button>
       ) : (
-        // <div>
-        //   <div>{walletAddress}</div>
-        //   <div>
-        //   </div>
-        // </div>
         <Button variant="contained" onClick={handleDisconnectMetaMask}
           endIcon={<LogoutIcon sx={{ color: '#fff' }} />}
           sx={{
@@ -202,30 +192,3 @@ const ConnectButton = () => {
 };
 
 export default ConnectButton;
-
-//  <div>
-//        {walletAddress !== null ? (
-//          <div>
-//            <ConnectButton
-//              variant="contained"
-//              className="explorebtns"
-//              onClick={handleDisconnectMetaMask}
-//            >
-//              Disconnect
-//            </ConnectButton>
-//          </div>
-//        ) : (
-//          <div>
-//            <Button variant="contained" onClick={handleConnectMetaMask}>
-//              Connect Wallet
-//            </Button>
-//           <Connectbtn
-//             variant="contained"
-//             className="explorebtns"
-//             onClick={handleConnectMetaMask}
-//           >
-//             Connect Wallet
-//           </Connectbtn>
-//         </div>
-//        )}
-//      </div>

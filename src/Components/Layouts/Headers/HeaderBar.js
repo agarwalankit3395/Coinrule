@@ -1,7 +1,5 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 import { Toolbar, Box, useMediaQuery, useTheme, Container } from '@mui/material'
-import DarkModeOutlinedIcon from '@mui/icons-material/DarkModeOutlined';
-import WbSunnyRoundedIcon from '@mui/icons-material/WbSunnyRounded';
 
 import logo from './DitiaeBank.png'
 import DrawerComponent from './DrawerComponent';
@@ -9,8 +7,6 @@ import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import NavBar from './NavBar';
 import ConnectButton from './ConnectButton';
-
-import withRouter from '../../../withRouter';
 
 const Navbarmain = styled.div`
     // background: ${({ theme }) => theme.soft}; 
@@ -27,12 +23,11 @@ const Logo = styled.div``
 const Img = styled.img` 
     width:150px
 `
-const DarkLight = styled.div`
+styled.div`
     margin-left: 1rem;
     cursor: pointer;
 `
-const Connectbtn = styled.div` 
-     
+styled.div`    
         cursor: pointer; 
         background: ${({ theme }) => theme.bgBtns};
         padding: 10px 20px;

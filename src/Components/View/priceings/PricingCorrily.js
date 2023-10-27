@@ -69,12 +69,9 @@ const PricingCorrily = () => {
     try {
       const BNBchainId = "0x61";
       if (window.ethereum && walletAddress == null) {
-        console.log("Hello Metamask!");
         const currentChainId = await window.ethereum.request({
           method: "eth_chainId"
         });
-        console.log(currentChainId);
-        console.log(BNBchainId);
         if (BNBchainId === currentChainId) {
           const accounts = await window.ethereum
             .request({ method: "eth_requestAccounts" })
@@ -90,7 +87,6 @@ const PricingCorrily = () => {
           const account = accounts[0];
           setWalletAddress(account);
           await get_info(window.ethereum, account);
-          console.log(account);
           handleMetaMaskConnection();
         } else {
           try {
@@ -141,15 +137,11 @@ const PricingCorrily = () => {
 
       const monthlyPrice = await info?.arbi_bot.MonthSubscribyionFee();
       const convertedValue =( monthlyPrice/10**18).toString()
-      console.log(convertedValue, "Price check")
-      console.log(monthlyPrice.toString());
       const result = await info?.arbi_bot.Subscription("1", { value: ethers.utils.parseUnits(convertedValue,"ether")});
-      console.log(result);
       await result.wait();
       handleSubscriptionOpenAlert();
       navigate("/invest", { replace: true });
     } catch (error) {
-      console.log(error);
       if (error.message) {
         setErrorMessage(error.message);
         handleErrorAlert();
@@ -166,9 +158,7 @@ const PricingCorrily = () => {
     try {
 
       const yearPrice = await info.arbi_bot.YearSubscribyionFee();
-      console.log(yearPrice.toString());
       const convertedValue =( yearPrice/10**18).toString()
-      console.log(convertedValue, "Price check")
   
       const result = await info.arbi_bot.Subscription("2", { value: ethers.utils.parseUnits(convertedValue,"ether")});
       await result.wait();

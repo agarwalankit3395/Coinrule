@@ -1,6 +1,5 @@
 import React from 'react'
-import { Box, Container, Divider, Grid, Typography } from '@mui/material';
-import logo from "../../../assets/contactUsImg/contactUs.png";
+import { Box, Container, Grid } from '@mui/material';
 import logo2 from "../../../assets/contactUsImg/support_arbitragecrypto.pro-2.2.png";
 const ContactUs = () => {
     return (

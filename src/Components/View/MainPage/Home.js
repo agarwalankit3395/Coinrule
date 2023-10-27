@@ -9,23 +9,6 @@ const Access = styled.div`
     font-size: 24px;
     font-weight: 400;
 `
-// const StartStaking = styled.button`
-//     padding: 10px 20px;
-//     border: 1px solid ${({ theme }) => theme.bgBtns};
-//     background: ${({ theme }) => theme.bgBtns};
-//     color:  ${({ theme }) => theme.bg};
-//     border-radius: 10px;
-//     font-size: 20px;
-//     cursor: pointer;
-//     transition: 0.5s;
-//     &:hover {
-//         background: ${({ theme }) => theme.bg};
-//         color: ${({ theme }) => theme.bgBtns};
-//         letter-spacing:2px;
-//         border: 1px solid ${({ theme }) => theme.bgBtns}
-//     }
-// `
-
 
 const Home = () => {
     return (
